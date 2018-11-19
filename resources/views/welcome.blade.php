@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-    <title>{{ env('APP_NAME') }}</title>
+    <title>{{ env('APP_NAME') }} [ criação de sites e sistemas PHP ]</title>
     <meta charset="UTF-8">
     <meta name="description" content="Labs - Design Studio">
     <meta name="keywords" content="lab, onepage, creative, html">
@@ -38,22 +38,21 @@
 
 
     <!-- Header section -->
-    <header class="header-section">
+    <!--<header class="header-section">
         <div class="logo">
-            <img src="img/logo.png" alt=""><!-- Logo -->
+            <img src="{{ asset('img/logo.png') }}" alt="">
         </div>
-        <!-- Navigation -->
         <div class="responsive"><i class="fa fa-bars"></i></div>
         <nav>
             <ul class="menu-list">
-                <li class="active"><a href="home.html">Home</a></li>
+                <li class="active"><a href="{{ url('/') }}">Início</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="elements.html">Elements</a></li>
             </ul>
         </nav>
-    </header>
+    </header>-->
     <!-- Header section end -->
 
 
@@ -61,14 +60,14 @@
     <div class="hero-section">
         <div class="hero-content">
             <div class="hero-center">
-                <img src="img/big-logo.png" alt="">
-                <p>Get your freebie template now!</p>
+                <img src="{{ asset('img/big-logo.png') }}" alt="">
+                <p></p>
             </div>
         </div>
         <!-- slider -->
         <div id="hero-slider" class="owl-carousel">
-            <div class="item  hero-item" data-bg="{{ asset('img/01.jpg') }}"></div>
-            <div class="item  hero-item" data-bg="{{ asset('img/02.jpg') }}"></div>
+            <div class="item hero-item" data-bg="{{ asset('img/01.jpg') }}"></div>
+            <div class="item hero-item" data-bg="{{ asset('img/02.jpg') }}"></div>
         </div>
     </div>
     <!-- Intro Section -->
@@ -416,7 +415,7 @@
 
 
     <!-- Promotion section -->
-    <div class="promotion-section">
+    <!--<div class="promotion-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
@@ -430,7 +429,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <!-- Promotion section end-->
 
 
@@ -475,7 +474,7 @@
 
     <!-- Footer section -->
     <footer class="footer-section">
-        <h2>2017 All rights reserved. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></h2>
+        <h2>&copy; 2005-2018 Todos os direitos reservados.</h2>
     </footer>
     <!-- Footer section end -->
 
