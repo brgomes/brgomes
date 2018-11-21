@@ -492,6 +492,7 @@ ul {
 
 .lab-card:hover h2,
 .lab-card:hover p,
+.lab-card:hover a,
 .lab-card:hover .icon {
 	color: #fff;
 }
@@ -541,7 +542,8 @@ ul {
   Testimonial section
 --------------------------*/
 .testimonial-section {
-	padding-top: 320px;
+	padding-top: 100px;
+	padding-bottom: 100px;
 	/*background: #220c3b;*/
 	background: #2559A6;
 	position: relative;
@@ -747,7 +749,7 @@ ul {
 .member h3 {
 	font-size: 14px;
 	/*color: #2be6ab;*/
-	color: #2559A6;
+	color: #fff;
 	font-weight: 400;
 	text-transform: uppercase;
 }
@@ -872,18 +874,23 @@ ul {
 	font-size: 14px;
 }
 
+.contact-info .con-item a {
+	color: #fff;
+}
+
 
 /*------------------------
 	Footer section
 --------------------------*/
 .footer-section {
-	background: #220c3b;
+	/*background: #220c3b;*/
+	background: #2559A6;
 	text-align: center;
 }
 
 .footer-section h2 {
 	/*color: #6a23b5;*/
-	color: #f16436;
+	color: #fff;
 	font-size: 14px;
 	padding: 18px 0;
 }
@@ -1589,6 +1596,19 @@ ul {
 		        transform-origin: left center;
 		left: 50%;
 		margin-left: -4px;
+	}
+}
+
+@media (min-width: 768px) {
+	.header-section {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.header-section .logo {
+		width: 100%;
+		text-align: center;
 	}
 }
 

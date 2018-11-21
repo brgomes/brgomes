@@ -38,11 +38,11 @@
 
 
     <!-- Header section -->
-    <!--<header class="header-section">
+    <header class="header-section">
         <div class="logo">
             <img src="{{ asset('img/logo.png') }}" alt="">
         </div>
-        <div class="responsive"><i class="fa fa-bars"></i></div>
+        <!--<div class="responsive"><i class="fa fa-bars"></i></div>
         <nav>
             <ul class="menu-list">
                 <li class="active"><a href="{{ url('/') }}">Início</a></li>
@@ -51,8 +51,8 @@
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="elements.html">Elements</a></li>
             </ul>
-        </nav>
-    </header>-->
+        </nav>-->
+    </header>
     <!-- Header section end -->
 
 
@@ -86,8 +86,12 @@
                             <div class="icon">
                                 <i class="flaticon-023-flask"></i>
                             </div>
-                            <h2>Get in the lab</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
+                            <h2>Quem é?</h2>
+                            <p>
+                                Bacharelado em Ciência da Computação (Faculdades Objetivo - Goiânia/2003).
+                                <br />
+                                <a href="#">Clique aqui</a> para baixar o currículo.
+                            </p>
                         </div>
                     </div>
                     <!-- single card -->
@@ -96,8 +100,11 @@
                             <div class="icon">
                                 <i class="flaticon-011-compass"></i>
                             </div>
-                            <h2>Projects online</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
+                            <h2>Experiência</h2>
+                            <p>
+                                Programador com 16 anos de mercado, atua há 12 anos como Analista
+                                de Sistemas na <a href="#">Universidade de Gurupi</a> (Tocantins).
+                            </p>
                         </div>
                     </div>
                     <!-- single card -->
@@ -106,331 +113,58 @@
                             <div class="icon">
                                 <i class="flaticon-037-idea"></i>
                             </div>
-                            <h2>SMART MARKETING</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
+                            <h2>Serviços</h2>
+                            <p>
+                                Projeto, desenvolvimento e hospedagem de websites e sistemas online.
+                                <br />
+                                Desenvolvimento de aplicativos para celular.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- card section end-->
-
-
-        <!-- About contant -->
-        <div class="about-contant">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Get in <span>the Lab</span> and discover the world</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequat ante ac congue. Quisque porttitor porttitor tempus. Donec maximus ipsum non ornare vporttitor porttitorestibulum. Sed libero nibh, feugiat at enim id, bibendum sollicitudin arcu.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <p>Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum. Nam convallis vel erat id dictum. Sed ut risus in orci convallis viverra a eget nisi. Aenean pellentesque elit vitae eros dignissim ultrices. Quisque porttitor porttitorlaoreet vel risus et luctus.</p>
-                    </div>
-                </div>
-                <div class="text-center mt60">
-                    <a href="" class="site-btn">Browse</a>
-                </div>
-                <!-- popup video -->
-                <div class="intro-video">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <img src="{{ asset('img/video.jpg') }}" alt="">
-                            <a href="https://www.youtube.com/watch?v=JgHfx2v9zOU" class="video-popup">
-                                <i class="fa fa-play"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <!-- About section end -->
 
 
     <!-- Testimonial section -->
-    <div class="testimonial-section pb100">
-        <div class="test-overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-4">
-                    <div class="section-title left">
-                        <h2>What our clients say</h2>
-                    </div>
-                    <div class="owl-carousel" id="testimonial-slide">
-                        <!-- single testimonial -->
-                        <div class="testimonial">
-                            <span>‘​‌‘​‌</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.</p>
-                            <div class="client-info">
-                                <div class="avatar">
-                                    <img src="{{ asset('img/avatar/01.jpg') }}" alt="">
-                                </div>
-                                <div class="client-name">
-                                    <h2>Michael Smith</h2>
-                                    <p>CEO Company</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single testimonial -->
-                        <div class="testimonial">
-                            <span>‘​‌‘​‌</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.</p>
-                            <div class="client-info">
-                                <div class="avatar">
-                                    <img src="{{ asset('img/avatar/02.jpg') }}" alt="">
-                                </div>
-                                <div class="client-name">
-                                    <h2>Michael Smith</h2>
-                                    <p>CEO Company</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single testimonial -->
-                        <div class="testimonial">
-                            <span>‘​‌‘​‌</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.</p>
-                            <div class="client-info">
-                                <div class="avatar">
-                                    <img src="{{ asset('img/avatar/01.jpg') }}" alt="">
-                                </div>
-                                <div class="client-name">
-                                    <h2>Michael Smith</h2>
-                                    <p>CEO Company</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single testimonial -->
-                        <div class="testimonial">
-                            <span>‘​‌‘​‌</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.</p>
-                            <div class="client-info">
-                                <div class="avatar">
-                                    <img src="{{ asset('img/avatar/02.jpg') }}" alt="">
-                                </div>
-                                <div class="client-name">
-                                    <h2>Michael Smith</h2>
-                                    <p>CEO Company</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single testimonial -->
-                        <div class="testimonial">
-                            <span>‘​‌‘​‌</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.</p>
-                            <div class="client-info">
-                                <div class="avatar">
-                                    <img src="{{ asset('img/avatar/01.jpg') }}" alt="">
-                                </div>
-                                <div class="client-name">
-                                    <h2>Michael Smith</h2>
-                                    <p>CEO Company</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single testimonial -->
-                        <div class="testimonial">
-                            <span>‘​‌‘​‌</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.</p>
-                            <div class="client-info">
-                                <div class="avatar">
-                                    <img src="{{ asset('img/avatar/02.jpg') }}" alt="">
-                                </div>
-                                <div class="client-name">
-                                    <h2>Michael Smith</h2>
-                                    <p>CEO Company</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial section end-->
-
-
-    <!-- Services section -->
-    <div class="services-section spad">
-        <div class="container">
-            <div class="section-title dark">
-                <h2>Get in <span>the Lab</span> and see the services</h2>
-            </div>
-            <div class="row">
-                <!-- single service -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="service">
-                        <div class="icon">
-                            <i class="flaticon-023-flask"></i>
-                        </div>
-                        <div class="service-text">
-                            <h2>Get in the lab</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- single service -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="service">
-                        <div class="icon">
-                            <i class="flaticon-011-compass"></i>
-                        </div>
-                        <div class="service-text">
-                            <h2>Projects online</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- single service -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="service">
-                        <div class="icon">
-                            <i class="flaticon-037-idea"></i>
-                        </div>
-                        <div class="service-text">
-                            <h2>SMART MARKETING</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- single service -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="service">
-                        <div class="icon">
-                            <i class="flaticon-039-vector"></i>
-                        </div>
-                        <div class="service-text">
-                            <h2>Social Media</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- single service -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="service">
-                        <div class="icon">
-                            <i class="flaticon-036-brainstorming"></i>
-                        </div>
-                        <div class="service-text">
-                            <h2>Brainstorming</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- single service -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="service">
-                        <div class="icon">
-                            <i class="flaticon-026-search"></i>
-                        </div>
-                        <div class="service-text">
-                            <h2>Documented</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- single service -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="service">
-                        <div class="icon">
-                            <i class="flaticon-018-laptop-1"></i>
-                        </div>
-                        <div class="service-text">
-                            <h2>Responsive</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- single service -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="service">
-                        <div class="icon">
-                            <i class="flaticon-043-sketch"></i>
-                        </div>
-                        <div class="service-text">
-                            <h2>Retina ready</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- single service -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="service">
-                        <div class="icon">
-                            <i class="flaticon-012-cube"></i>
-                        </div>
-                        <div class="service-text">
-                            <h2>Ultra modern</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <a href="" class="site-btn">Browse</a>
-            </div>
-        </div>
-    </div>
-    <!-- services section end -->
-
-
-    <!-- Team Section -->
-    <div class="team-section spad">
+    <div class="testimonial-section mb60">
         <div class="overlay"></div>
         <div class="container">
             <div class="section-title">
-                <h2>Get in <span>the Lab</span> and  meet the team</h2>
+                <h2>Portfólio <span>em</span> destaque</h2>
             </div>
             <div class="row">
                 <!-- single member -->
                 <div class="col-sm-4">
                     <div class="member">
                         <img src="{{ asset('img/team/1.jpg') }}" alt="">
-                        <h2>Christinne Williams</h2>
-                        <h3>Project Manager</h3>
+                        <h2>Futebol de Goyaz</h2>
+                        <h3>Goiânia (GO)</h3>
                     </div>
                 </div>
                 <!-- single member -->
                 <div class="col-sm-4">
                     <div class="member">
                         <img src="{{ asset('img/team/2.jpg') }}" alt="">
-                        <h2>Christinne Williams</h2>
-                        <h3>Junior developer</h3>
+                        <h2>TITempus</h2>
+                        <h3>Natal (RN)</h3>
                     </div>
                 </div>
                 <!-- single member -->
                 <div class="col-sm-4">
                     <div class="member">
                         <img src="{{ asset('img/team/3.jpg') }}" alt="">
-                        <h2>Christinne Williams</h2>
-                        <h3>Digital designer</h3>
+                        <h2>Boa Sorte Imóveis</h2>
+                        <h3>Gurupi (TO)</h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Team Section end-->
-
-
-    <!-- Promotion section -->
-    <!--<div class="promotion-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9">
-                    <h2>Are you ready to stand out?</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est.</p>
-                </div>
-                <div class="col-md-3">
-                    <div class="promo-btn-area">
-                        <a href="" class="site-btn btn-2">Browse</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>-->
-    <!-- Promotion section end-->
+    <!-- Testimonial section end-->
 
 
     <!-- Contact section -->
@@ -440,28 +174,28 @@
                 <!-- contact info -->
                 <div class="col-md-5 col-md-offset-1 contact-info col-push">
                     <div class="section-title left">
-                        <h2>Contact us</h2>
+                        <h2>Entre em contato</h2>
                     </div>
-                    <p>Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum. </p>
-                    <h3 class="mt60">Main Office</h3>
-                    <p class="con-item">C/ Libertad, 34 <br> 05200 Arévalo </p>
-                    <p class="con-item">0034 37483 2445 322</p>
-                    <p class="con-item">hello@company.com</p>
+                    <p>A resposta será enviada o mais breve possível.</p>
+                    <h3 class="mt60">Redes sociais</h3>
+                    <p class="con-item"><a href="https://twitter.com/brgomes" target="_blank">Twitter</a></p>
+                    <p class="con-item"><a href="https://www.skoob.com.br/usuario/127841-bruno-roberto" target="_blank">Skoob</a></p>
+                    <p class="con-item"><a href="https://www.last.fm/pt/user/brgomes" target="_blank">Last.fm</a></p>
                 </div>
                 <!-- contact form -->
                 <div class="col-md-6 col-pull">
                     <form class="form-class" id="con_form">
                         <div class="row">
                             <div class="col-sm-6">
-                                <input type="text" name="name" placeholder="Your name">
+                                <input type="text" name="name" placeholder="Seu nome">
                             </div>
                             <div class="col-sm-6">
-                                <input type="text" name="email" placeholder="Your email">
+                                <input type="text" name="email" placeholder="Seu e-mail">
                             </div>
                             <div class="col-sm-12">
-                                <input type="text" name="subject" placeholder="Subject">
-                                <textarea name="message" placeholder="Message"></textarea>
-                                <button class="site-btn">send</button>
+                                <input type="text" name="subject" placeholder="Assunto">
+                                <textarea name="message" placeholder="Mensagem"></textarea>
+                                <button class="site-btn">Enviar</button>
                             </div>
                         </div>
                     </form>
