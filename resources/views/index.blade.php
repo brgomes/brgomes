@@ -86,9 +86,9 @@
                             <div class="icon">
                                 <i class="flaticon-023-flask"></i>
                             </div>
-                            <h2>Quem é?</h2>
+                            <h2>Formação</h2>
                             <p>
-                                Bacharelado em Ciência da Computação (Faculdades Objetivo - Goiânia/2003).
+                                Bacharel em Ciência da Computação (Faculdades Objetivo - Goiânia/2003).
                                 <br />
                                 <a href="#">Clique aqui</a> para baixar o currículo.
                             </p>
