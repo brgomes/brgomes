@@ -88,9 +88,9 @@
                             </div>
                             <h2>Formação</h2>
                             <p>
-                                Bacharel em Ciência da Computação (Faculdades Objetivo - Goiânia/2003).
+                                Bacharel em Ciência da Computação
                                 <br />
-                                <a href="#">Clique aqui</a> para baixar o currículo.
+                                (IUESO - Instituto Unificado de Ensino Superior Objetivo, Goiânia-GO/2003).
                             </p>
                         </div>
                     </div>
@@ -115,9 +115,9 @@
                             </div>
                             <h2>Serviços</h2>
                             <p>
-                                Projeto, desenvolvimento e hospedagem de websites e sistemas online.
+                                Modelagem, desenvolvimento e hospedagem de websites e sistemas online.
                                 <br />
-                                Desenvolvimento de aplicativos para celular.
+                                Consultoria em projetos na internet.
                             </p>
                         </div>
                     </div>
@@ -140,7 +140,7 @@
                 <!-- single member -->
                 <div class="col-sm-4">
                     <div class="member">
-                        <img src="{{ asset('img/team/1.jpg') }}" alt="">
+                        <a href="http://www.futeboldegoyaz.com.br" target="_blank"><img src="{{ asset('img/team/1.jpg') }}" alt=""></a>
                         <h2>Futebol de Goyaz</h2>
                         <h3>Goiânia (GO)</h3>
                     </div>
@@ -148,7 +148,7 @@
                 <!-- single member -->
                 <div class="col-sm-4">
                     <div class="member">
-                        <img src="{{ asset('img/team/2.jpg') }}" alt="">
+                        <a href="http://www.titempus.com.br" target="_blank"><img src="{{ asset('img/team/2.jpg') }}" alt=""></a>
                         <h2>TITempus</h2>
                         <h3>Natal (RN)</h3>
                     </div>
@@ -156,7 +156,7 @@
                 <!-- single member -->
                 <div class="col-sm-4">
                     <div class="member">
-                        <img src="{{ asset('img/team/3.jpg') }}" alt="">
+                        <a href="http://www.boasorteimoveis.com.br" target="_blank"><img src="{{ asset('img/team/3.jpg') }}" alt=""></a>
                         <h2>Boa Sorte Imóveis</h2>
                         <h3>Gurupi (TO)</h3>
                     </div>
@@ -184,21 +184,22 @@
                 </div>
                 <!-- contact form -->
                 <div class="col-md-6 col-pull">
-                    <form class="form-class" id="con_form">
+                    {!! Form::open(['route' => 'enviar', 'class' => 'form-class', 'method' => 'post']) !!}
                         <div class="row">
                             <div class="col-sm-6">
-                                <input type="text" name="name" placeholder="Seu nome">
+                                {!! Form::text('nome', null, ['placeholder' => 'Seu nome']) !!}
                             </div>
                             <div class="col-sm-6">
-                                <input type="text" name="email" placeholder="Seu e-mail">
+                                {!! Form::email('email', null, ['placeholder' => 'Seu e-mail']) !!}
                             </div>
                             <div class="col-sm-12">
-                                <input type="text" name="subject" placeholder="Assunto">
-                                <textarea name="message" placeholder="Mensagem"></textarea>
-                                <button class="site-btn">Enviar</button>
+                                {!! Form::text('assunto', null, ['placeholder' => 'Assunto']) !!}
+                                {!! Form::textarea('mensagem', null, ['placeholder' => 'Mensagem']) !!}
+
+                                <button type="submit" class="site-btn">Enviar</button>
                             </div>
                         </div>
-                    </form>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
@@ -208,7 +209,7 @@
 
     <!-- Footer section -->
     <footer class="footer-section">
-        <h2>&copy; 2005-2018 Todos os direitos reservados.</h2>
+        <h2>&copy; 2005-{{ date('Y') }} Todos os direitos reservados.</h2>
     </footer>
     <!-- Footer section end -->
 

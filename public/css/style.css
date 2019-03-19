@@ -433,7 +433,7 @@ ul {
 	height: 100%;
 	left: 0;
 	top: 0;
-	z-index: 3;
+	/*z-index: 3;*/
 	background-image: url("../img/overlay.png");
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -803,7 +803,7 @@ ul {
 	z-index: -1;
 }
 
-.form-class input[type="text"] {
+.form-class input[type="text"], .form-class input[type="email"] {
 	width: 100%;
 	margin-bottom: 26px;
 	border: none;
@@ -812,7 +812,9 @@ ul {
 }
 
 .form-class input[type="text"]:focus,
-.form-class input[type="text"]:hover {
+.form-class input[type="email"]:focus,
+.form-class input[type="text"]:hover,
+.form-class input[type="email"]:hover {
 	outline: none;
 }
 
