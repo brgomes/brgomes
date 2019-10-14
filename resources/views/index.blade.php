@@ -139,21 +139,21 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="member">
-                        <a href="http://www.futeboldegoyaz.com.br" target="_blank"><img src="{{ asset('img/team/1.jpg') }}" alt=""></a>
+                        <a href="http://www.futeboldegoyaz.com.br" target="_blank"><img src="{{ asset('img/team/1.jpg') }}" alt="Futebol de Goyaz"></a>
                         <h2>Futebol de Goyaz</h2>
                         <h3>Goiânia (GO)</h3>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="member">
-                        <a href="http://www.titempus.com.br" target="_blank"><img src="{{ asset('img/team/2.jpg') }}" alt=""></a>
+                        <a href="http://www.titempus.com.br" target="_blank"><img src="{{ asset('img/team/2.jpg') }}" alt="TITempus"></a>
                         <h2>TITempus</h2>
                         <h3>Natal (RN)</h3>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="member">
-                        <a href="http://www.boasorteimoveis.com.br" target="_blank"><img src="{{ asset('img/team/3.jpg') }}" alt=""></a>
+                        <a href="http://www.boasorteimoveis.com.br" target="_blank"><img src="{{ asset('img/team/3.jpg') }}" alt="Boa Sorte Imóveis"></a>
                         <h2>Boa Sorte Imóveis</h2>
                         <h3>Gurupi (TO)</h3>
                     </div>
@@ -161,18 +161,25 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="member">
-                        <a href="http://www.futeboldegoyaz.com.br" target="_blank"><img src="{{ asset('img/team/4.jpg') }}" alt=""></a>
+                        <a href="http://www.orcamoveis.com.br" target="_blank"><img src="{{ asset('img/team/4.jpg') }}" alt="Orça Móveis"></a>
                         <h2>Orça Móveis</h2>
                         <h3>Gurupi (TO)</h3>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="member">
-                        <a href="http://www.titempus.com.br" target="_blank"><img src="{{ asset('img/team/5.jpg') }}" alt=""></a>
+                        <a href="http://www.pedalnbeer.com.br" target="_blank"><img src="{{ asset('img/team/5.jpg') }}" alt="Pedal N' Beer"></a>
                         <h2>Pedal N' Beer</h2>
                         <h3>Gurupi (TO)</h3>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="member">
+                        <a href="http://www.sobgestao.com.br" target="_blank"><img src="{{ asset('img/team/6.jpg') }}" alt="SOBGestão"></a>
+                        <h2>SOBGestão</h2>
+                        <h3>Sistema na nuvem</h3>
                     </div>
                 </div>
             </div>
