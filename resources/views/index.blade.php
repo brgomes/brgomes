@@ -137,7 +137,6 @@
                 <h2>Portfólio <span>em</span> destaque</h2>
             </div>
             <div class="row">
-                <!-- single member -->
                 <div class="col-sm-4">
                     <div class="member">
                         <a href="http://www.futeboldegoyaz.com.br" target="_blank"><img src="{{ asset('img/team/1.jpg') }}" alt=""></a>
@@ -145,7 +144,6 @@
                         <h3>Goiânia (GO)</h3>
                     </div>
                 </div>
-                <!-- single member -->
                 <div class="col-sm-4">
                     <div class="member">
                         <a href="http://www.titempus.com.br" target="_blank"><img src="{{ asset('img/team/2.jpg') }}" alt=""></a>
@@ -153,11 +151,27 @@
                         <h3>Natal (RN)</h3>
                     </div>
                 </div>
-                <!-- single member -->
                 <div class="col-sm-4">
                     <div class="member">
                         <a href="http://www.boasorteimoveis.com.br" target="_blank"><img src="{{ asset('img/team/3.jpg') }}" alt=""></a>
                         <h2>Boa Sorte Imóveis</h2>
+                        <h3>Gurupi (TO)</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="member">
+                        <a href="http://www.futeboldegoyaz.com.br" target="_blank"><img src="{{ asset('img/team/4.jpg') }}" alt=""></a>
+                        <h2>Orça Móveis</h2>
+                        <h3>Gurupi (TO)</h3>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="member">
+                        <a href="http://www.titempus.com.br" target="_blank"><img src="{{ asset('img/team/5.jpg') }}" alt=""></a>
+                        <h2>Pedal N' Beer</h2>
                         <h3>Gurupi (TO)</h3>
                     </div>
                 </div>
@@ -177,11 +191,11 @@
                     <div class="section-title left">
                         <h2>Entre em contato</h2>
                     </div>
-                    <p>A resposta será enviada o mais breve possível.</p>
-                    <h3 class="mt60">Redes sociais</h3>
-                    <p class="con-item"><a href="https://twitter.com/brgomes" target="_blank">Twitter</a></p>
-                    <p class="con-item"><a href="https://www.skoob.com.br/usuario/127841-bruno-roberto" target="_blank">Skoob</a></p>
-                    <p class="con-item"><a href="https://www.last.fm/pt/user/brgomes" target="_blank">Last.fm</a></p>
+                    <p></p>
+                    <h3 class="mt60"></h3>
+                    <p class="con-item"></p>
+                    <p class="con-item"></p>
+                    <p class="con-item"></p>
                 </div>
                 <!-- contact form -->
                 <div class="col-md-6 col-pull">
