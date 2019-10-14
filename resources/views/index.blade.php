@@ -102,8 +102,8 @@
                             </div>
                             <h2>Experiência</h2>
                             <p>
-                                Programador com 16 anos de mercado, atua há 12 anos como Analista
-                                de Sistemas na <a href="http://www.unirg.edu.br" target="_blank">Universidade de Gurupi</a> (Tocantins).
+                                No mercado de Tecnologia da Informação há 17 anos, atua há 13 como Analista de Sistemas na
+                                <a href="http://www.unirg.edu.br" target="_blank">Universidade de Gurupi</a>.
                             </p>
                         </div>
                     </div>
