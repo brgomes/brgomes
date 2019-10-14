@@ -167,6 +167,7 @@
     <!-- Testimonial section end-->
 
 
+    <a name="contato"></a>
     <!-- Contact section -->
     <div class="contact-section spad fix">
         <div class="container">
@@ -184,6 +185,8 @@
                 </div>
                 <!-- contact form -->
                 <div class="col-md-6 col-pull">
+                    @include('includes._alerts')
+
                     {!! Form::open(['route' => 'enviar', 'class' => 'form-class', 'method' => 'post']) !!}
                         <div class="row">
                             <div class="col-sm-6">
@@ -223,5 +226,7 @@
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('js/circle-progress.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+
+    @include('includes._recaptcha', ['action' => 'brgomes:contato'])
 </body>
 </html>

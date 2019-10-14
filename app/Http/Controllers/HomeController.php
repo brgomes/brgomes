@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ContatoValidationRequest;
+use Mail;
 
 class HomeController extends Controller
 {
@@ -16,8 +18,23 @@ class HomeController extends Controller
         return view('index');
     }
 
-    public function enviarEmail(Request $request)
+    public function enviarEmail(ContatoValidationRequest $request)
     {
-        dd($request->all());
+        try {
+            $data = $request->all();
+
+            Mail::send('emails.contato', $data, function($message) use ($data) {
+                //$message->from($data['email'], $data['nome']);
+                $message->from(env('MAIL_USERNAME'));
+                $message->replyTo($data['email'], $data['nome']);
+                $message->subject($data['assunto']);
+                $message->to('bruno@brgomes.com', 'Bruno R. Gomes');
+            });
+        } catch (\Exception $e) {
+            //dd($e->getMessage());
+            return redirect()->to('/#contato')->with('error', 'No momento o contato não pode ser enviado. Por favor, tente novamente mais tarde.')->withInput();
+        }
+
+        return redirect()->to('/#contato')->with('success', 'Obrigado! Seu contato foi enviado com sucesso.');
     }
 }
