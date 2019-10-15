@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-    <title>{{ env('APP_NAME') }} [ criação de sites e sistemas PHP ]</title>
+    <title>{{ env('APP_NAME') }} [ sistemas online ]</title>
     <meta charset="UTF-8">
     <meta name="description" content="Labs - Design Studio">
     <meta name="keywords" content="lab, onepage, creative, html">
