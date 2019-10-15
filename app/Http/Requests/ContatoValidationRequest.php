@@ -7,6 +7,8 @@ use App\Rules\ReCaptchaV3;
 
 class ContatoValidationRequest extends FormRequest
 {
+    protected $redirect = '/#contato';
+
     public function authorize()
     {
         return true;
