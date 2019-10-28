@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'brgomes.com',
+    'title' => 'brgomes.com [sistema]',
 
     'title_prefix' => '',
 

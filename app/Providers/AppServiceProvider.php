@@ -46,7 +46,32 @@ class AppServiceProvider extends ServiceProvider
                     'icon'      => 'fas fa-futbol',
                     'submenu'   => [
                         [
-                            'text'  => 'Clubes',
+                            'text'      => 'Cadastros',
+                            'submenu'   => [
+                                [
+                                    'text'  => 'Campeonatos',
+                                ],
+                                [
+                                    'text'  => 'Clubes',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'text'      => 'Investimentos',
+                    'icon'      => 'fas fa-chart-line',
+                    'submenu'   => [
+                        [
+                            'text'      => 'Cadastros',
+                            'submenu'   => [
+                                [
+                                    'text'  => 'Listagens B3',
+                                ],
+                                [
+                                    'text'  => 'Setores',
+                                ],
+                            ],
                         ],
                     ],
                 ],
