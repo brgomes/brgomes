@@ -32,7 +32,7 @@ class HomeController extends Controller
             });
         } catch (\Exception $e) {
             //dd($e->getMessage());
-            return redirect()->to('/#contato')->with('error', 'No momento o contato não pode ser enviado. Por favor, tente novamente mais tarde.')->withInput();
+            return redirect()->to('/#contato')->with('error', 'No momento o contato não pôde ser enviado. Por favor, tente novamente mais tarde.')->withInput();
         }
 
         return redirect()->to('/#contato')->with('success', 'Obrigado! Seu contato foi enviado com sucesso.');

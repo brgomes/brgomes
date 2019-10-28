@@ -1,7 +1,10 @@
 /node_modules
 /public/hot
 /public/storage
+/public/vendor
+/resources/lang/vendor/
 /storage/*.key
+/storage/debugbar
 /vendor
 /.idea
 /.vscode
