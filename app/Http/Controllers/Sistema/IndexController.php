@@ -9,6 +9,6 @@ class IndexController extends Controller
 {
     public function index()
     {
-    	echo 'Index do sistema';
+    	return view('sistema.index');
     }
 }

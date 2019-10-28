@@ -32,7 +32,7 @@ return [
 
     'logo' => '<b>brgomes</b>.com',
 
-    'logo_mini' => '<b>B</b>R',
+    'logo_mini' => '<b>B</b>RG',
 
     /*
     |--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return [
     |
     | Choose a skin color for your admin panel. The available skin colors:
     | blue, black, purple, yellow, red, and green. Each skin also has a
-    | ligth variant: blue-light, purple-light, purple-light, etc.
+    | light variant: blue-light, purple-light, purple-light, etc.
     |
     */
 
@@ -75,25 +75,44 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Control Sidebar (Right Sidebar)
+    |--------------------------------------------------------------------------
+    |
+    | Here we have the option to enable a right sidebar.
+    | When active, you can use @section('right-sidebar')
+    | The icon you configured will be displayed at the end of the top menu,
+    | and will show/hide de sidebar.
+    | The slide option will slide the sidebar over the content, while false
+    | will push the content, and have no animation.
+    | You can also choose the sidebar theme (dark or light).
+    | The right Sidebar can only be used if layout is not top-nav.
+    |
+    */
+
+    'right_sidebar' => false,
+    'right_sidebar_icon' => 'fas fa-cogs',
+    'right_sidebar_theme' => 'dark',
+    'right_sidebar_slide' => true,
+
+    /*
+    |--------------------------------------------------------------------------
     | URLs
     |--------------------------------------------------------------------------
     |
-    | Register here your dashboard, logout, login and register URLs. The
+    | Register here your dashboard, logout, login and register URLs.
+    | This was automatically set on install, only change if you really need.
     | logout URL automatically sends a POST request in Laravel 5.3 or higher.
-    | You can set the request to a GET or POST with logout_method.
     | Set register_url to null if you don't want a register link.
     |
     */
 
-    'dashboard_url' => '/',
+    'dashboard_url' => 'sistema',
 
     'logout_url' => 'logout',
 
-    'logout_method' => null,
-
     'login_url' => 'login',
 
-    'register_url' => '',
+    'register_url' => 'register',
 
     /*
     |--------------------------------------------------------------------------
@@ -101,372 +120,12 @@ return [
     |--------------------------------------------------------------------------
     |
     | Specify your menu items to display in the left sidebar. Each menu item
-    | should have a text and and a URL. You can also specify an icon from
-    | Font Awesome. A string instead of an array represents a header in sidebar
+    | should have a text and a URL. You can also specify an icon from Font
+    | Awesome. A string instead of an array represents a header in sidebar
     | layout. The 'can' is a filter on Laravel's built in Gate functionality.
-    |
     */
 
-    'menu' => [
-        /*'MENU',
-        [
-            'text'      => 'INÍCIO',
-            'route'     => 'home',
-            'icon'      => 'home',
-            'active'    => ['/'],
-        ],
-        [
-            'text'          => 'Tarefas',
-            'route'         => 'sistema.tarefas.mensal',
-            'icon'          => 'tasks',
-            'label'         => '4',
-            'label_color'   => 'danger',
-            'active'        => ['/sistema/tarefas/*'],
-        ],
-        [
-            'text'      => 'BILHAR',
-            'icon'      => 'cubes',
-            'can'       => 'modulo-5',
-            'submenu'   => [
-                [
-                    'text'      => 'Pessoas',
-                    'route'     => 'bilhar.pessoas.index',
-                    'can'       => 'bilhar.pessoas.index',
-                    'active'    => ['bilhar/pessoas*'],
-                ],
-                [
-                    'text'      => 'Mesas',
-                    'icon'      => 'fas fa-fw fa-share',
-                    'submenu'   => [
-                        [
-                            'text'      => 'Cadastro',
-                            'route'     => 'bilhar.mesas.index',
-                            'can'       => 'bilhar.mesas.index',
-                            'active'    => ['bilhar/mesas', 'bilhar/mesas?*', 'bilhar/mesas/*'],
-                        ],
-                        [
-                            'text'      => 'Locar mesas',
-                            'route'     => 'bilhar.mesas.lista-liberadas',
-                            'can'       => 'bilhar.mesas.locar',
-                            'active'    => ['bilhar/locar-mesa*'],
-                        ],
-                        [
-                            'text'      => 'Liberar mesas',
-                            'route'     => 'bilhar.mesas.lista-locadas',
-                            'can'       => 'bilhar.mesas.liberar',
-                            'active'    => ['bilhar/liberar-mesa*'],
-                        ],
-                        [
-                            'text'      => 'Atualizar relógios',
-                            'route'     => 'bilhar.relogios.index',
-                            'can'       => 'bilhar.mesas.inserir-relogio',
-                            'active'    => ['bilhar/relogios*'],
-                        ],
-                    ]
-                ],
-                [
-                    'text'      => 'Relatórios',
-                    'icon'      => 'fas fa-fw fa-share',
-                    'submenu'   => [
-                        [
-                            'text'      => 'Mapa de cobrança',
-                            'route'     => 'bilhar.relatorios.mapa-cobranca',
-                            'can'       => 'bilhar.relatorios.mapa-cobranca',
-                            'active'    => ['bilhar/relatorios/mapa-cobranca*'],
-                        ],
-                        [
-                            'text'      => 'Mesas',
-                            //'route'     => 'bilhar.relatorios.mesas',
-                            //'can'       => 'bilhar.relatorios.mesas',
-                            //'active'    => ['bilhar/relatorios/mesas*'],
-                        ],
-                        [
-                            'text'      => 'Contratos',
-                            //'route'     => 'bilhar.relatorios.contratos',
-                            //'can'       => 'bilhar.relatorios.contratos',
-                            //'active'    => ['bilhar/relatorios/contratos*'],
-                        ],
-                    ]
-                ],
-                [
-                    'text'      => 'Configurações',
-                    'route'     => 'bilhar.configuracoes.index',
-                    'can'       => 'bilhar.configuracoes',
-                    'active'    => ['bilhar/configuracoes*'],
-                ],
-            ],
-        ],
-        [
-            'text'      => 'CONFIGURAÇÕES',
-            'icon'      => 'cog',
-            'submenu'   => [
-                [
-                    'text'      => 'Meu cadastro',
-                    'route'     => 'configuracoes.meucadastro',
-                    'active'    => ['configuracoes/meucadastro'],
-                ],
-                [
-                    'text'      => 'Mudar senha',
-                    'route'     => 'configuracoes.senha',
-                    'active'    => ['configuracoes/senha'],
-                ],
-                [
-                    'text'      => 'Assinatura',
-                    'route'     => 'configuracoes.assinatura',
-                    'active'    => ['configuracoes/assinatura'],
-                ],
-            ],
-        ],
-        [
-            'text'      => 'FINANCEIRO',
-            'icon'      => 'bank',
-            'can'       => 'modulo-4',
-            'submenu'   => [
-                [
-                    'text'      => 'Contas a pagar',
-                    'icon'      => 'fas fa-fw fa-share',
-                    'submenu'   => [
-                        [
-                            'text'      => 'Tipos de conta',
-                            'route'     => 'financeiro.tipos-conta-pagar.index',
-                            'can'       => 'financeiro.tipos-conta-pagar.index',
-                            'active'    => ['financeiro/tipos-conta-pagar*'],
-                        ],
-                        [
-                            'text'      => 'Conta a pagar',
-                            'route'     => 'financeiro.contas-pagar.index',
-                            'can'       => 'financeiro.contas-pagar.index',
-                            'active'    => ['financeiro/contas-pagar*'],
-                        ],
-                    ]
-                ],
-                [
-                    'text'      => 'Contas a receber',
-                    'icon'      => 'fas fa-fw fa-share',
-                    'submenu'   => [
-                        [
-                            'text'      => 'Tipo de conta',
-                            'route'     => 'financeiro.tipos-conta-receber.index',
-                            'can'       => 'financeiro.tipos-conta-receber.index',
-                            'active'    => ['financeiro/tipos-conta-receber*'],
-                        ],
-                        [
-                            'text'      => 'Contas a receber',
-                            'route'     => 'financeiro.contas-receber.index',
-                            'can'       => 'financeiro.contas-receber.index',
-                            'active'    => ['financeiro/contas-receber*'],
-                        ],
-                    ]
-                ],
-                [
-                    'text'      => 'Relatórios',
-                    'icon'      => 'fas fa-fw fa-share',
-                    'submenu'   => [
-                        [
-                            'text'      => 'Contas a pagar',
-                            //'route'     => 'financeiro.relatorios.contas-pagar',
-                            //'can'       => 'financeiro.relatorios.contas-pagar',
-                            //'active'    => ['financeiro/tipos-conta-receber*'],
-                        ],
-                        [
-                            'text'      => 'Contas a receber',
-                            //'route'     => 'financeiro.relatorios.contas-receber',
-                            //'can'       => 'financeiro.relatorios.contas-receber',
-                            //'active'    => ['financeiro/contas-receber*'],
-                        ],
-                    ]
-                ],
-            ],
-        ],
-        [
-            'text'      => 'JURÍDICO',
-            'icon'      => 'gavel',
-            'can'       => 'modulo-2',
-            'submenu'   => [
-                [
-                    'text'      => 'Básico',
-                    'icon'      => 'fas fa-fw fa-share',
-                    'submenu'   => [
-                        [
-                            'text'      => 'Áreas jurídicas',
-                            'route'     => 'juridico.areas-juridicas.index',
-                            'can'       => 'juridico.areasjuridicas.index',
-                            'active'    => ['juridico/areas-juridicas*'],
-                        ],
-                        [
-                            'text'      => 'Funções',
-                            'route'     => 'juridico.funcoes.index',
-                            'can'       => 'juridico.funcoes.index',
-                            'active'    => ['juridico/funcoes*'],
-                        ],
-                        [
-                            'text'      => 'Locais de tramitação',
-                            'route'     => 'juridico.locais-tramitacao.index',
-                            'can'       => 'juridico.locaistramitacao.index',
-                            'active'    => ['juridico/locais-tramitacao*'],
-                        ],
-                        [
-                            'text'      => 'Naturezas de processo',
-                            'route'     => 'juridico.naturezas.index',
-                            'can'       => 'juridico.naturezas.index',
-                            'active'    => ['juridico/naturezas*'],
-                        ],
-                        [
-                            'text'      => 'Pastas',
-                            'route'     => 'juridico.pastas.index',
-                            'can'       => 'juridico.pastas.index',
-                            'active'    => ['juridico/pastas*'],
-                        ],
-                        [
-                            'text'      => 'Situações de recurso',
-                            'route'     => 'juridico.situacoes-recurso.index',
-                            'can'       => 'juridico.situacoesrecurso.index',
-                            'active'    => ['juridico/situacoes-recurso*'],
-                        ],
-                        [
-                            'text'      => 'Tipos de ação',
-                            'route'     => 'juridico.tipos-acao.index',
-                            'can'       => 'juridico.tiposacao.index',
-                            'active'    => ['juridico/tipos-acao*'],
-                        ],
-                        [
-                            'text'      => 'Tipos de andamento',
-                            'route'     => 'juridico.tipos-andamento.index',
-                            'can'       => 'juridico.tiposandamento.index',
-                            'active'    => ['juridico/tipos-andamento*'],
-                        ],
-                        [
-                            'text'      => 'Tipos de procedimento',
-                            'route'     => 'juridico.tipos-procedimento.index',
-                            'can'       => 'juridico.tiposprocedimento.index',
-                            'active'    => ['juridico/tipos-procedimento*'],
-                        ],
-                        [
-                            'text'      => 'Tipos de recurso',
-                            'route'     => 'juridico.tipos-recurso.index',
-                            'can'       => 'juridico.tiposrecurso.index',
-                            'active'    => ['juridico/tipos-recurso*'],
-                        ],
-                    ],
-                ],
-                [
-                    'text'      => 'Pessoas',
-                    'route'     => 'juridico.pessoas.index',
-                    'can'       => 'juridico.pessoas.index',
-                    'active'    => ['juridico/pessoas*'],
-                ],
-                [
-                    'text'      => 'Processos',
-                    'route'     => 'juridico.processos.index',
-                    'can'       => 'juridico.processos.index',
-                    'active'    => ['juridico/processos*'],
-                ],
-                [
-                    'text'      => 'Atendimentos',
-                    'route'     => 'juridico.atendimentos.index',
-                    'can'       => 'juridico.atendimentos.index',
-                    'active'    => ['juridico/atendimentos*'],
-                ],
-                [
-                    'text'      => 'Relatórios',
-                    'icon'      => 'fas fa-fw fa-share',
-                    'submenu'   => [
-                        [
-                            'text'      => 'Clientes',
-                            'route'     => 'juridico.relatorios.clientes',
-                            'can'       => 'juridico.relatorios.clientes',
-                            'active'    => ['juridico/relatorios/clientes*'],
-                        ],
-                        [
-                            'text'      => 'Processos',
-                            'route'     => 'juridico.relatorios.processos',
-                            'can'       => 'juridico.relatorios.processos',
-                            'active'    => ['juridico/relatorios/processos*'],
-                        ],
-                    ]
-                ],
-            ],
-        ],
-        [
-            'text'      => 'SISTEMA',
-            'icon'      => 'database',
-            'can'       => 'modulo-1',
-            'submenu'   => [
-                [
-                    'text'      => 'Profissões',
-                    'route'     => 'sistema.profissoes.index',
-                    'can'       => 'sistema.profissoes.index',
-                    'active'    => ['sistema/profissoes*'],
-                ],
-                [
-                    'text'      => 'Usuários',
-                    'route'     => 'sistema.usuarios.index',
-                    'can'       => 'sistema.usuarios.index',
-                    'active'    => ['sistema/usuarios*'],
-                ],
-                [
-                    'text'      => 'Perfis',
-                    'route'     => 'sistema.papeis.index',
-                    'can'       => 'sistema.perfis.index',
-                    'active'    => ['sistema/papeis*'],
-                ],
-                [
-                    'text'      => 'Unidades de trabalho',
-                    'route'     => 'sistema.unidades.index',
-                    'can'       => 'sistema.unidades.index',
-                    'active'    => ['sistema/unidades*'],
-                ],
-                [
-                    'text'      => 'Tarefas',
-                    'route'     => 'sistema.tarefas.index',
-                    'can'       => 'sistema.tarefas.index',
-                    'active'    => ['sistema/tarefas/*'],
-                ],
-            ],
-        ],
-        [
-            'text'      => 'SOBGESTÃO',
-            'icon'      => 'leaf',
-            'can'       => 'superadmin',
-            'submenu'   => [
-                [
-                    'text'      => 'Coligadas',
-                    'route'     => 'sobgestao.coligadas.index',
-                    'active'    => ['sobgestao/coligadas*'],
-                ],
-                [
-                    'text'      => 'Assinaturas',
-                    'route'     => 'sobgestao.assinaturas.index',
-                    //'active'    => [''],
-                ],
-                [
-                    'text'      => 'Módulos',
-                    'route'     => 'sobgestao.modulos.index',
-                    'active'    => ['sobgestao/modulos*', 'sobgestao/cadastros*', 'sobgestao/permissoes*']
-                ],
-                [
-                    'text'      => 'Países, estados e cidades',
-                    'route'     => 'sobgestao.paises.index',
-                    'active'    => ['sobgestao/paises*', 'sobgestao/estados*', 'sobgestao/cidades*']
-                ],
-            ],
-        ],*/
-        
-
-        /*'LABELS',
-        [
-            'text'       => 'Important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'Warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'Information',
-            'icon_color' => 'aqua',
-        ],*/
-    ],
+    'menu' => [],
 
     /*
     |--------------------------------------------------------------------------
@@ -482,10 +141,12 @@ return [
 
     'filters' => [
         JeroenNoten\LaravelAdminLte\Menu\Filters\HrefFilter::class,
+        JeroenNoten\LaravelAdminLte\Menu\Filters\SearchFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\ActiveFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\SubmenuFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\ClassesFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class,
+        JeroenNoten\LaravelAdminLte\Menu\Filters\LangFilter::class,
     ],
 
     /*
@@ -493,15 +154,85 @@ return [
     | Plugins Initialization
     |--------------------------------------------------------------------------
     |
-    | Choose which JavaScript plugins should be included. At this moment,
-    | only DataTables is supported as a plugin. Set the value to true
-    | to include the JavaScript file from a CDN via a script tag.
+    | Configure which JavaScript plugins should be included. At this moment,
+    | DataTables, Select2, Chartjs and SweetAlert are added out-of-the-box,
+    | including the Javascript and CSS files from a CDN via script and link tag.
+    | Plugin Name, active status and files array (even empty) are required.
+    | Files, when added, need to have type (js or css), asset (true or false) and location (string).
+    | When asset is set to true, the location will be output using asset() function.
     |
     */
 
     'plugins' => [
-        //'datatables' => true,
-        //'select2'    => true,
-        //'chartjs'    => true,
+        [
+            'name' => 'Datatables',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '//cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '//cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.css',
+                ],
+            ],
+        ],
+        [
+            'name' => 'Select2',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css',
+                ],
+            ],
+        ],
+        [
+            'name' => 'Chartjs',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js',
+                ],
+            ],
+        ],
+        [
+            'name' => 'Sweetalert2',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                ],
+            ],
+        ],
+        [
+            'name' => 'Pace',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-center-radar.min.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
     ],
 ];
