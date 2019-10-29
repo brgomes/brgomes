@@ -8,6 +8,9 @@ Route::group([], function() {
 Route::group(['middleware' => 'auth', 'prefix' => 'sistema'], function() {
 	Route::get('/', 'Sistema\IndexController@index')->name('sistema.index');
 
+	Route::get('/importacao', 'Importacao\IndexController@index')->name('importacao.index');
+	Route::get('/importacao/executar/{chave}', 'Importacao\IndexController@executar')->name('importacao.executar');
+
 	Route::get('/usuario', 'Sistema\IndexController@usuario')->name('sistema.usuario');
 });
 

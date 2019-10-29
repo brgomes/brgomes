@@ -26,6 +26,14 @@ class AppServiceProvider extends ServiceProvider
                     'active'    => ['/sistema'],
                 ],
                 [
+                    'text'          => 'Importação',
+                    'route'         => 'importacao.index',
+                    'icon'          => 'fa fa-database',
+                    //'label'         => ($qtdeTarefas > 0) ? $qtdeTarefas : null,
+                    //'label_color'   => 'default',
+                    'active'        => ['/sistema/importacao*'],
+                ],
+                [
                     'text'          => 'Livros',
                     'route'         => 'sistema.index',
                     'icon'          => 'fa fa-book',
