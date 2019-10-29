@@ -13,7 +13,7 @@ class Usuario extends Authenticatable implements Auditable
 
     protected $table    = 'sistemaUsuario';
     protected $fillable = ['primeironome', 'sobrenome', 'email', 'senha', 'ultimoacesso', 'timezone'];
-    protected $hidden   = ['senha', 'remember_token'];
+    protected $hidden   = ['senha', 'access_token', 'remember_token'];
 
     public function getAuthPassword()
     {

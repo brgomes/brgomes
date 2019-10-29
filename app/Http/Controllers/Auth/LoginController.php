@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -25,6 +25,8 @@ class LoginController extends Controller
         $user = Auth::user();
 
         if ($user) {
+            apiRequest('GET', 'logout');
+
             //$user->logout();
 
             Auth::logout();

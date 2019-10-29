@@ -18,15 +18,24 @@ class UsuarioController extends Controller
             $success['token'] = $user->createToken('brgomes.com')->accessToken;
 
             return response()->json(['success' => $success], $this->successStatus);
-        } else {
-            return response()->json(['error' => 'Unauthorised'], 401);
         }
+
+        return response()->json(['error' => 'Unauthorised'], 401);
+    }
+
+    public function logout(Request $request)
+    {
+    	$request->user()->token()->revoke();
+
+        return response()->json([
+            'message' => 'Successfully logged out'
+        ]);
     }
 
     public function details()
     {
         $user = Auth::user();
 
-        return response()->json(['success' => $user], $this->successStatus);
+    	return response()->json(['success' => $user], $this->successStatus);
     }
 }
