@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Outros\Livro;
+use App\Http\Requests\LivroValidationRequest;
 
 class LivroController extends Controller
 {
@@ -13,7 +14,7 @@ class LivroController extends Controller
         return Livro::all();
     }
 
-    public function store(Request $request)
+    public function store(LivroValidationRequest $request)
     {
         if ($livro = Livro::create($request->all())) {
             return response(['status' => 'sucess', 'livro' => $livro], 200);
@@ -27,7 +28,7 @@ class LivroController extends Controller
         return Livro::find($id);
     }
 
-    public function update(Request $request, $id)
+    public function update(LivroValidationRequest $request, $id)
     {
         $livro = Livro::find($id);
 
