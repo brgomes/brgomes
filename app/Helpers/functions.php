@@ -24,7 +24,7 @@ function apiRequest($method, $url, array $options = [])
     ];
 
     $options    = array_merge($options2, $options);
-    $response   = $client->request($method, 'https://dev.brgomes2/api/' . $url, $options);
+    $response   = $client->request($method, env('WEBSERVICE_URL') . $url, $options);
 
     return json_decode($response->getBody()->getContents());
 }
