@@ -35,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
                 ],
                 [
                     'text'          => 'Livros',
-                    'route'         => 'sistema.index',
+                    'route'         => 'sistema.livros.index',
                     'icon'          => 'fa fa-book',
                     //'label'         => ($qtdeTarefas > 0) ? $qtdeTarefas : null,
                     //'label_color'   => 'default',
@@ -43,7 +43,7 @@ class AppServiceProvider extends ServiceProvider
                 ],
                 [
                     'text'          => 'Strava',
-                    'route'         => 'sistema.strava',
+                    'route'         => 'sistema.strava.index',
                     'icon'          => 'fab fa-strava',
                     //'label'         => ($qtdeTarefas > 0) ? $qtdeTarefas : null,
                     //'label_color'   => 'default',

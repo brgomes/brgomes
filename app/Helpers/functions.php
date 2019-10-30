@@ -1,11 +1,10 @@
 <?php
 
 use App\Helpers\Registry;
-use App\Models\Sistema\Usuario;
-use App\Models\Sistema\Configuracao;
-use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image;
+//use Illuminate\Support\Facades\Storage;
+//use Intervention\Image\Facades\Image;
 use GuzzleHttp\Client;
+use Carbon\Carbon;
 
 function apiRequest($method, $url, array $options = [])
 {
@@ -28,243 +27,6 @@ function apiRequest($method, $url, array $options = [])
     return json_decode($response->getBody()->getContents());
 }
 
-function configuracao($configuracao, $usuario_id = null, $coligada_id = null)
-{
-    //$var = $configuracao . '_' . (int) $usuario_id . '_' . (int) $coligada_id;
-    $query  = Configuracao::where('nome', $configuracao);
-
-    if (isset($usuario_id)) {
-        $query->where('usuario_id', $usuario_id);
-    }
-
-    if (isset($coligada_id)) {
-        $query->where('coligada_id', $coligada_id);
-    }
-
-    $result = $query->first();
-
-    if (null === $result) {
-        return null;
-    }
-
-    return $result->valor;
-}
-
-function podeExcluirFK(array $deletes, $item)
-{
-    $errors = [];
-
-    if (count($deletes) > 0) {
-        $configuracao = configuracao('delete-foreign-key');
-
-        if ($configuracao == '0') {
-            foreach ($deletes as $del) {
-                $aux = $item->$del;
-
-                if ($aux->count() > 0) {
-                    $errors[] = 'O registro não pode ser excluído porque está sendo usado em outro cadastro (' . $del . ').';
-                }
-            }
-        }
-    }
-
-    return $errors;
-}
-
-function usuario($id)
-{
-    return Usuario::find($id);
-}
-
-function codlogado()
-{
-    $user = auth()->user();
-
-    if (null === $user) {
-        return null;
-    }
-
-    return $user->id;
-}
-
-function minhasUnidades()
-{
-    $id     = codlogado();
-    $var    = 'minhas_unidades_' . (int) $id;
-
-    if (Registry::isRegistered($var)) {
-        return Registry::get($var);
-    }
-
-    if (null === $id) {
-        return [];
-    }
-
-    $usuario    = Usuario::find($id);
-    $unidades   = $usuario->unidades();
-
-    $minhas_unidades = [];
-
-    if (count($unidades) == 0) {
-        return $minhas_unidades;
-    }
-
-    foreach ($unidades as $unidade) {
-        $minhas_unidades[$unidade->id] = $unidade->nome;
-    }
-
-    Registry::set($var, $minhas_unidades);
-
-    return $minhas_unidades;
-}
-
-function minhaUnidadeAtiva()
-{
-    $id     = codlogado();
-    $var    = 'minha-unidade-ativa_' . (int) $id;
-
-    if (null === $id) {
-        return null;
-    }
-
-    if (Registry::isRegistered($var)) {
-        return Registry::get($var);
-    }
-
-    $unidades           = minhasUnidades();
-    $coligadaunidade_id = configuracao('cod-coligada-unidade-ativa', $id);
-
-    if (isset($coligadaunidade_id)) {
-        // Se o usuário não tiver mais privilégio para a unidade setada na configuração
-        // o sistema já atualiza a configuração para null
-        if (!array_key_exists($coligadaunidade_id, $unidades)) {
-            $where = [
-                'usuario_id'    => $id,
-                'configuracao'  => 'cod-coligada-unidade-ativa'
-            ];
-
-            $data = [
-                'valor'         => null,
-                'updated_at'    => date('Y-m-d H:i:s')
-            ];
-
-            Configuracao::updateOrCreate($where, $data);
-
-            $coligadaunidade_id = null;
-        }
-    }
-
-    Registry::set($var, $coligadaunidade_id);
-
-    return $coligadaunidade_id;
-}
-
-function minhasNotificacoes()
-{
-    $id  = codlogado();
-    $var = 'notificacoes_' . $id;
-
-    if (Registry::isRegistered($var)) {
-        return Registry::get($var);
-    }
-
-    $notificacoes = auth()->user()->notificacoes();
-
-    Registry::set($var, $notificacoes);
-
-    return $notificacoes;
-}
-
-function minhasTarefasEmAberto()
-{
-    $id  = codlogado();
-    $var = 'tarefas_' . $id;
-
-    if (Registry::isRegistered($var)) {
-        return Registry::get($var);
-    }
-
-    $tarefas = auth()->user()->tarefas()->with(['processo', 'createdBy'])->whereNull('realizado_at')->orderBy('data')->orderBy('hora')->get();
-
-    Registry::set($var, $tarefas);
-
-    return $tarefas;
-}
-
-function qtdeNotificacoesNaoLidas()
-{
-    $result = minhasNotificacoes();
-    $qtde   = 0;
-
-    if ($result->count() > 0) {
-        foreach ($result as $notificacao) {
-            if (null === $notificacao->read_at) {
-                $qtde++;
-            }
-        }
-    }
-
-    return $qtde;
-}
-
-function categoriasPessoa()
-{
-    $categorias = [
-        [
-            'nome'  => 'Advogado',
-            'cor'   => 'blue',
-            'sigla' => 'adv',
-            'flag'  => 'advogado',
-        ],
-        [
-            'nome'  => 'Cliente',
-            'cor'   => 'green',
-            'sigla' => 'cli',
-            'flag'  => 'cliente',
-        ],
-        [
-            'nome'  => 'Parte contrária',
-            'cor'   => 'red',
-            'sigla' => 'pct',
-            'flag'  => 'partecontraria',
-        ],
-        [
-            'nome'  => 'Contato',
-            'cor'   => 'orange',
-            'sigla' => 'con',
-            'flag'  => 'contato',
-        ],
-        [
-            'nome'  => 'Captador',
-            'cor'   => 'grey',
-            'sigla' => 'cap',
-            'flag'  => 'captador',
-        ],
-    ];
-
-    return $categorias;
-}
-
-function categoriasPessoaBilhar()
-{
-    $categorias = [
-        [
-            'nome'  => 'Cliente',
-            'cor'   => 'green',
-            'sigla' => 'cli',
-            'flag'  => 'cliente',
-        ],
-        [
-            'nome'  => 'Comissionado',
-            'cor'   => 'purple',
-            'sigla' => 'com',
-            'flag'  => 'comissionado',
-        ],
-    ];
-
-    return $categorias;
-}
-
 function notfound($msg = null)
 {
     if (null === $msg) {
@@ -277,17 +39,6 @@ function notfound($msg = null)
 function unauthorized()
 {
     abort(403, 'Não autorizado');
-}
-
-function tipopessoa($tipo = null)
-{
-    $tipos = ['F' => 'Física', 'J' => 'Jurídica'];
-
-    if (null === $tipo) {
-        return $tipos;
-    }
-
-    return $tipos[$tipo];
 }
 
 function estadocivil($ec = null)
@@ -314,19 +65,15 @@ function agora()
     return date('Y-m-d H:i:s');
 }
 
-function datetime($value, $from = 'Y-m-d H:i:s', $to = 'd/m/Y H:i:s')
+function datetime($value, $to)
 {
 	if (null === $value) {
-		return null;
-	}
-
-    $datetime = DateTime::createFromFormat($from, $value);
-
-    if (false === $datetime) {
-    	return null;
+        return null;
     }
 
-    return $datetime->format($to);
+    $carbon = Carbon::createFromTimestamp(strtotime($value));
+
+    return $carbon->format($to);
 }
 
 function simnao($value)

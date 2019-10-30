@@ -11,9 +11,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'sistema'], function() {
 	Route::get('/importacao', 'Importacao\IndexController@index')->name('importacao.index');
 	Route::get('/importacao/executar/{chave}', 'Importacao\IndexController@executar')->name('importacao.executar');
 
-	Route::get('/usuario', 'Sistema\IndexController@usuario')->name('sistema.usuario');
+	//Route::get('/usuario', 'Sistema\IndexController@usuario')->name('sistema.usuario');
 
-	Route::get('/strava', 'Sistema\StravaController@index')->name('sistema.strava');
+	Route::get('/livros', 'Sistema\LivroController@index')->name('sistema.livros.index');
+
+	Route::get('/strava', 'Sistema\StravaController@index')->name('sistema.strava.index');
 });
 
 Auth::routes();

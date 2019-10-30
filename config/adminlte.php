@@ -164,7 +164,7 @@ return [
     */
 
     'plugins' => [
-        [
+        /*[
             'name' => 'Datatables',
             'active' => true,
             'files' => [
@@ -179,8 +179,8 @@ return [
                     'location' => '//cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.css',
                 ],
             ],
-        ],
-        [
+        ],*/
+        /*[
             'name' => 'Select2',
             'active' => true,
             'files' => [
@@ -195,7 +195,7 @@ return [
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css',
                 ],
             ],
-        ],
+        ],*/
         [
             'name' => 'Chartjs',
             'active' => true,
@@ -207,7 +207,7 @@ return [
                 ],
             ],
         ],
-        [
+        /*[
             'name' => 'Sweetalert2',
             'active' => true,
             'files' => [
@@ -217,8 +217,8 @@ return [
                     'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
                 ],
             ],
-        ],
-        [
+        ],*/
+        /*[
             'name' => 'Pace',
             'active' => true,
             'files' => [
@@ -233,6 +233,6 @@ return [
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
                 ],
             ],
-        ],
+        ],*/
     ],
 ];
