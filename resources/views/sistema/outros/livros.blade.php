@@ -10,7 +10,7 @@
         <div class="col-lg-3 col-xs-6">
             <div class="small-box bg-aqua">
                 <div class="inner">
-                    <h3>{{ $livros->count() }}</h3>
+                    <h3>{{ count($result->livros) }}</h3>
 
                     <p>Livros na fila</p>
                 </div>
@@ -22,9 +22,9 @@
         <div class="col-lg-3 col-xs-6">
             <div class="small-box bg-green">
                 <div class="inner">
-                    <h3>{{ $percentuallido }}<sup style="font-size: 20px">%</sup></h3>
+                    <h3>{{ $result->percentuallido }}<sup style="font-size: 20px">%</sup></h3>
 
-                    <p>{{ $paginaslidas }} de {{ number_format($totalpaginas, 0, '', '.') }} páginas lidas</p>
+                    <p>{{ $result->paginaslidas }} de {{ number_format($result->totalpaginas, 0, '', '.') }} páginas lidas</p>
                 </div>
                 <div class="icon">
                     <i class="fa fa-check"></i>
@@ -34,7 +34,7 @@
         <div class="col-lg-3 col-xs-6">
             <div class="small-box bg-yellow">
                 <div class="inner">
-                    <h3>{{ $paginaspordia }}</h3>
+                    <h3>{{ $result->paginaspordia }}</h3>
 
                     <p>Páginas por dia</p>
                 </div>
@@ -47,9 +47,9 @@
             <!-- small box -->
             <div class="small-box bg-red">
                 <div class="inner">
-                    <h3>{{ $datareferencia->format('d/m/Y') }}</h3>
+                    <h3>{{ datetime($result->previsaotermino, 'd/m/Y') }}</h3>
 
-                    <p>{{ number_format($diasrestantes, 0, '', '.') }} dias restantes</p>
+                    <p>{{ number_format($result->diasrestantes, 0, '', '.') }} dias restantes</p>
                 </div>
                 <div class="icon">
                     <i class="fa fa-calendar-alt"></i>
@@ -74,7 +74,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($livros as $livro)
+                        @foreach ($result->livros as $livro)
                             <tr>
                                 <td>{{ $livro->ordem }}</td>
                                 <td>{{ $livro->nome }}</td>
