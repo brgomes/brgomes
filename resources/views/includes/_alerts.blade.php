@@ -6,6 +6,16 @@
     </div>
 @endif
 
+@if (session('api_errors'))
+    <div class="alert alert-warning">
+        @foreach (session('api_errors') as $errors)
+            @foreach ($errors as $error)
+                <p class="mb-0">{{ $error }}</p>
+            @endforeach
+        @endforeach
+    </div>
+@endif
+
 @if (session('success'))
     <div class="alert alert-success">
         {!! session('success') !!}

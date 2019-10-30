@@ -11,9 +11,12 @@ class Usuario extends Authenticatable implements Auditable
 {
     use Notifiable, \OwenIt\Auditing\Auditable, HasApiTokens;
 
-    protected $table    = 'sistemaUsuario';
-    protected $fillable = ['primeironome', 'sobrenome', 'email', 'senha', 'ultimoacesso', 'timezone'];
-    protected $hidden   = ['senha', 'access_token', 'remember_token'];
+    protected $table = 'sistemaUsuario';
+
+    protected $fillable = ['primeironome', 'sobrenome', 'email', 'senha', 'ultimoacesso', 'paginaspordia',
+        'strava_client_id', 'strava_client_secret', 'strava_meta_pedal', 'strava_meta_corrida', 'timezone'];
+
+    protected $hidden = ['senha', 'access_token', 'remember_token'];
 
     public function getAuthPassword()
     {

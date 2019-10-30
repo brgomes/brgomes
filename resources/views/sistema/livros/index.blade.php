@@ -22,7 +22,7 @@
         <div class="col-lg-3 col-xs-6">
             <div class="small-box bg-green">
                 <div class="inner">
-                    <h3>{{ $result->percentuallido }}<sup style="font-size: 20px">%</sup></h3>
+                    <h3>{{ number_format($result->percentuallido, 0) }}<sup style="font-size: 20px">%</sup></h3>
 
                     <p>{{ $result->paginaslidas }} de {{ number_format($result->totalpaginas, 0, '', '.') }} páginas lidas</p>
                 </div>
@@ -47,7 +47,7 @@
             <!-- small box -->
             <div class="small-box bg-red">
                 <div class="inner">
-                    <h3>{{ datetime($result->previsaotermino, 'd/m/Y') }}</h3>
+                    <h3>{{ datetime($result->previsaotermino, 'd/m/y') }}</h3>
 
                     <p>{{ number_format($result->diasrestantes, 0, '', '.') }} dias restantes</p>
                 </div>
@@ -61,7 +61,7 @@
     <div class="box">
         <div class="box-body">
             <div class="table-responsive">
-                <table class="table table-bordered">
+                <table class="table table-bordered table-striped table-hover">
                     <thead>
                         <tr>
                             <th>Ordem</th>
@@ -84,8 +84,8 @@
                                 <td>{{ $livro->paginaslidas }}</td>
                                 <td>
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:{{ $livro->percentuallido }}%">
-                                            {{ $livro->percentuallido }}%
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:{{ number_format($livro->percentuallido, 0) }}%">
+                                            {{ number_format($livro->percentuallido, 0) }}%
                                         </div>
                                     </div>
                                 </td>
@@ -93,6 +93,10 @@
                         @endforeach
                     </tbody>
                 </table>
+
+                <button class="btn btn-success" data-toggle="modal" data-target="#modalInserirLivro"><span class="fa fa-plus"></span> Novo livro</button>
+
+                @include('sistema.livros._create')
             </div>
         </div>
     </div>

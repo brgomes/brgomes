@@ -23,8 +23,17 @@ function apiRequest($method, $url, array $options = [])
 
     $options    = array_merge($options2, $options);
     $response   = $client->request($method, env('WEBSERVICE_URL') . $url, $options);
+    $contents   = json_decode($response->getBody()->getContents());
+    $array      = array_merge(['statusCode' => $response->getStatusCode()], json_decode(json_encode($contents), true));
 
-    return json_decode($response->getBody()->getContents());
+    return json_decode(json_encode($array));
+}
+
+function error($message)
+{
+    if (config('app.debug')) {
+        throw new \ErrorException($message);
+    }
 }
 
 function notfound($msg = null)

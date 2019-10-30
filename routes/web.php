@@ -13,7 +13,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'sistema'], function() {
 
 	//Route::get('/usuario', 'Sistema\IndexController@usuario')->name('sistema.usuario');
 
-	Route::get('/livros', 'Sistema\LivroController@index')->name('sistema.livros.index');
+	Route::resource('livros', 'Sistema\LivroController', ['as' => 'sistema']);
 
 	Route::get('/strava', 'Sistema\StravaController@index')->name('sistema.strava.index');
 });

@@ -28,21 +28,17 @@ class LivroValidationRequest extends FormRequest
     public function messages()
     {
         return [
-            'dataaquisicao.required'    => 'O campo data de aquisição é obrigatório',
-            'totalpaginas.required'     => 'O campo total de páginas é obrigatório',
+            'dataaquisicao.required'    => 'O campo data de aquisição é obrigatório.',
+            'dataaquisicao.date'        => 'A data de aquisição não é uma data válida.',
+            'totalpaginas.required'     => 'O campo total de páginas é obrigatório.',
         ];
     }
 
     protected function failedValidation(Validator $validator)
     {
         $errors = (new ValidationException($validator))->errors();
+        $json   = ['errors' => $errors];
 
-        $json = [
-            'status'    => 'error',
-            'message'   => 'Não foi possível completar a operação',
-            'errors'    => $errors
-        ];
-
-        throw new HttpResponseException(response()->json($json, JsonResponse::HTTP_UNPROCESSABLE_ENTITY));
+        throw new HttpResponseException(response()->json($json, JsonResponse::HTTP_UNPROCESSABLE_ENTITY)); // Erro 422
     }
 }

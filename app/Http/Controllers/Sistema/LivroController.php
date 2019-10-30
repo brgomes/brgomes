@@ -8,18 +8,25 @@ use App\Models\Outros\Livro;
 
 class LivroController extends Controller
 {
-	protected $livro;
-
-	public function __construct(Livro $livro)
-	{
-		$this->livro = $livro;
-	}
-
-    public function index(Request $request)
+	public function index(Request $request)
     {
-    	$params = ['query' => ['pg' => '10']];
-    	$result	= apiRequest('GET', 'livros', $params);
+    	$result	= apiRequest('GET', 'livros', ['query' => ['pg' => auth()->user()->paginaspordia]]);
 
-    	return view('sistema.outros.livros', compact('result'));
+    	if ($result->statusCode == 200) {
+			return view('sistema.livros.index', compact('result'));
+		}
+
+		error($result->error);
+    }
+
+    public function store(Request $request)
+    {
+    	$result = apiRequest('POST', 'livros', ['form_params' => $request->all()]);
+
+    	if ($result->statusCode == 200) {
+    		return redirect()->route('sistema.livros.index');
+    	}
+
+    	return redirect()->back()->with('api_errors', $result->errors)->withInput();
     }
 }
