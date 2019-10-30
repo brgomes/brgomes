@@ -62,11 +62,13 @@ class LivroController extends Controller
 
     public function store(LivroValidationRequest $request)
     {
-        if ($livro = Livro::create($request->all())) {
-            return response(['livro' => $livro], 200);
-        }
+        try {
+            $livro = Livro::create($request->all());
 
-        return response(['error' => 'O livro não pôde ser salvo.'], 422);
+            return response()->json(['livro' => $livro], 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 422);
+        }
     }
 
     public function show($id)
@@ -76,13 +78,35 @@ class LivroController extends Controller
 
     public function update(LivroValidationRequest $request, $id)
     {
-        $livro = Livro::find($id);
+        try {
+            $livro = Livro::find($id);
 
-        return $livro->update($request->all());
+            if (!$livro) {
+                return response()->json(['message' => 'O livro não foi encontrado.'], 404);
+            }
+
+            $livro->update($request->all());
+
+            return response()->json(['livro' => $livro], 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 422);
+        }
     }
 
     public function destroy($id)
     {
-        return $livro->delete($id);
+        try {
+            $livro = Livro::find($id);
+
+            if (!$livro) {
+                return response()->json(['message' => 'O livro não foi encontrado.'], 404);
+            }
+
+            $livro->delete();
+
+            return response()->json(['message' => 'O livro foi excluído com sucesso.'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 422);
+        }
     }
 }

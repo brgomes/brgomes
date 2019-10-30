@@ -77,7 +77,9 @@
                         @foreach ($result->livros as $livro)
                             <tr>
                                 <td>{{ $livro->ordem }}</td>
-                                <td>{{ $livro->nome }}</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" data-target="#modalEditarLivro{{ $livro->id }}">{{ $livro->nome }}</a>
+                                </td>
                                 <td>{{ datetime($livro->dataaquisicao, 'd/m/Y') }}</td>
                                 <td>{{ datetime($livro->previsaotermino, 'd/m/Y') }}</td>
                                 <td>{{ $livro->totalpaginas }}</td>
@@ -88,6 +90,8 @@
                                             {{ number_format($livro->percentuallido, 0) }}%
                                         </div>
                                     </div>
+
+                                    @include('sistema.livros._edit', ['livro' => $livro, 'name' => 'modalEditarLivro'])
                                 </td>
                             </tr>
                         @endforeach

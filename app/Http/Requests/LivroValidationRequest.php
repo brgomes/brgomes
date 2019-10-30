@@ -20,8 +20,8 @@ class LivroValidationRequest extends FormRequest
         return [
             'nome'          => 'required',
             'dataaquisicao' => 'required|date',
-            'ordem'         => 'required',
-            'totalpaginas'  => 'required',
+            'ordem'         => 'required|numeric|max:99',
+            'totalpaginas'  => 'required|numeric|max:4000',
         ];
     }
 

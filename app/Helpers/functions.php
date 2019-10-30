@@ -22,7 +22,7 @@ function apiRequest($method, $url, array $options = [])
     ];
 
     $options    = array_merge($options2, $options);
-    $response   = $client->request($method, env('WEBSERVICE_URL') . $url, $options);
+    $response   = $client->request($method, env('API_URL') . $url, $options);
     $contents   = json_decode($response->getBody()->getContents());
     $array      = array_merge(['statusCode' => $response->getStatusCode()], json_decode(json_encode($contents), true));
 
@@ -33,6 +33,8 @@ function error($message)
 {
     if (config('app.debug')) {
         throw new \ErrorException($message);
+    } else {
+        abort(500);
     }
 }
 

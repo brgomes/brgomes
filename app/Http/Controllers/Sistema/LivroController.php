@@ -29,4 +29,19 @@ class LivroController extends Controller
 
     	return redirect()->back()->with('api_errors', $result->errors)->withInput();
     }
+
+    public function update(Request $request, $id)
+    {
+    	if ($request->ordem == '0') {
+    		$result = apiRequest('DELETE', "livros/$id");
+    	} else {
+    		$result = apiRequest('PUT', "livros/$id", ['form_params' => $request->all()]);
+    	}
+
+    	if ($result->statusCode == 200) {
+    		return redirect()->route('sistema.livros.index');
+    	}
+
+    	return redirect()->back()->with('api_errors', $result->errors)->withInput();
+    }
 }
