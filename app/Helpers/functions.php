@@ -19,7 +19,6 @@ function apiRequest($method, $url, array $options = [])
             'Authorization' => 'Bearer ' . $user->access_token,
             'Content-Type'  => 'application/x-www-form-urlencoded',
             'Accept'        => 'application/json',
-            'verify'        => false,
         ],
     ];
 

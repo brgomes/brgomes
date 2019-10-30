@@ -24,5 +24,7 @@ Route::group(['middleware' => 'auth:api'], function() {
 
 	Route::resource('livros', 'API\LivroController');
 
+	Route::resource('strava', 'API\StravaController');
+
 	Route::post('details', 'API\UsuarioController@details');
 });

@@ -43,7 +43,7 @@ class AppServiceProvider extends ServiceProvider
                 ],
                 [
                     'text'          => 'Strava',
-                    'route'         => 'sistema.index',
+                    'route'         => 'sistema.strava',
                     'icon'          => 'fab fa-strava',
                     //'label'         => ($qtdeTarefas > 0) ? $qtdeTarefas : null,
                     //'label_color'   => 'default',

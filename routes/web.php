@@ -12,6 +12,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'sistema'], function() {
 	Route::get('/importacao/executar/{chave}', 'Importacao\IndexController@executar')->name('importacao.executar');
 
 	Route::get('/usuario', 'Sistema\IndexController@usuario')->name('sistema.usuario');
+
+	Route::get('/strava', 'Sistema\StravaController@index')->name('sistema.strava');
 });
 
 Auth::routes();

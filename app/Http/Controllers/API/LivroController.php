@@ -17,7 +17,7 @@ class LivroController extends Controller
     public function store(LivroValidationRequest $request)
     {
         if ($livro = Livro::create($request->all())) {
-            return response(['status' => 'sucess', 'livro' => $livro], 200);
+            return response(['status' => 'success', 'livro' => $livro], 200);
         }
 
         return response(['status' => 'error'], 500);
