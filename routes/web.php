@@ -15,7 +15,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'sistema'], function() {
 
 	Route::resource('livros', 'Sistema\LivroController', ['as' => 'sistema']);
 
-	Route::get('/strava', 'Sistema\StravaController@index')->name('sistema.strava.index');
+	Route::get('strava', 'Sistema\StravaController@index')->name('sistema.strava.index');
+	Route::get('strava/callback', 'Sistema\StravaController@callback');
 });
 
 Auth::routes();
