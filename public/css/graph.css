@@ -23,9 +23,13 @@
     height: 100%;
     border-radius: 50%;
     clip: rect(0em, 0.5em, 1em, 0em);
+    background-color: white;
 }
 .right-side {
     transform: rotate(0deg);
+}
+.left-side {
+    background-color: white !important;
 }
 .label {
     position: absolute;

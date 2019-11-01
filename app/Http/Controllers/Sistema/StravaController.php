@@ -130,15 +130,19 @@ class StravaController extends Controller
 		$saldoPedal   = ($totalPedal - $totalPedalHoje);
 
 		if ($saldoCorrida < 0) {
-		    $progressCorrida = 'bg-danger';
+		    $progressCorrida 	= 'progress-bar-danger';
+		    $bgCorrida 			= 'box-danger';
 		} else {
-		    $progressCorrida = 'bg-success';
+		    $progressCorrida 	= 'progress-bar-success';
+		    $bgCorrida 			= 'box-success';
 		}
 
 		if ($saldoPedal < 0) {
-		    $progressPedal = 'bg-danger';
+		    $progressPedal 	= 'progress-bar-danger';
+		    $bgPedal 		= 'box-danger';
 		} else {
-		    $progressPedal = 'bg-success';
+		    $progressPedal 	= 'progress-bar-success';
+		    $bgPedal 		= 'box-success';
 		}
 
 		$mediaCorrida = round((($metaCorrida - $totalCorrida) / $semanas), 2);
@@ -160,6 +164,7 @@ class StravaController extends Controller
 		        'saldo_meta'        => ($totalCorrida - $metaCorrida),
 		        'media_ideal'       => $mediaCorrida,
 		        'progress'          => $progressCorrida,
+		        'bg'				=> $bgCorrida,
 		        'total_semana'      => $totalCorridaSemana,
 		        'percentual_semana' => ($mediaCorrida == 0) ? 0 : round((($totalCorridaSemana * 100) / $mediaCorrida), $digitos)
 		    ]
@@ -177,11 +182,12 @@ class StravaController extends Controller
 		        'percentual' => round((($totalPedal * 100) / $metaPedal), $digitos),
 		    ],
 		    'estatisticas' => [
-		        'saldo'        => $saldoPedal,
-		        'saldo_meta'   => ($totalPedal - $metaPedal),
-		        'media_ideal'  => $mediaPedal,
-		        'progress'     => $progressPedal,
-		        'total_semana' => $totalPedalSemana,
+		        'saldo'        		=> $saldoPedal,
+		        'saldo_meta'   		=> ($totalPedal - $metaPedal),
+		        'media_ideal'  		=> $mediaPedal,
+		        'progress'     		=> $progressPedal,
+		        'bg'				=> $bgPedal,
+		        'total_semana' 		=> $totalPedalSemana,
 		        'percentual_semana' => ($mediaPedal == 0) ? 0 : round((($totalPedalSemana * 100) / $mediaPedal), $digitos)
 		    ]
 		];
