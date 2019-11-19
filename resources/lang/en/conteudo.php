@@ -1,6 +1,7 @@
 <?php
 
 return [
+	'carregando'		=> 'Loading',
 	'formacao'			=> 'Formation',
 	'desc_formacao'		=> 'Bachelor of Computer Science',
 	'experiencia'		=> 'Experience',
