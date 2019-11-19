@@ -39,6 +39,13 @@
 
     <!-- Header section -->
     <header class="header-section">
+        <div class="header-language">
+            <div class="flags">
+                <a href="{{ url('/') }}"><img src="{{ asset('img/flags/24x24-brazil.png') }}"></a>
+                <a href="{{ url('/en') }}"><img src="{{ asset('img/flags/24x24-uk.png') }}"></a>
+                <a href="{{ url('/es') }}"><img src="{{ asset('img/flags/24x24-spain.png') }}"></a>
+            </div>
+        </div>
         <div class="logo">
             <img src="{{ asset('img/logo.png') }}" alt="">
         </div>
@@ -59,6 +66,13 @@
     <!-- Intro Section -->
     <div class="hero-section">
         <div class="hero-content">
+            <div class="hero-language">
+                <div class="flags">
+                    <a href="{{ url('/') }}"><img src="{{ asset('img/flags/24x24-brazil.png') }}"></a>
+                    <a href="{{ url('/en') }}"><img src="{{ asset('img/flags/24x24-uk.png') }}"></a>
+                    <a href="{{ url('/es') }}"><img src="{{ asset('img/flags/24x24-spain.png') }}"></a>
+                </div>
+            </div>
             <div class="hero-center">
                 <img src="{{ asset('img/big-logo.png') }}" alt="">
                 <p></p>
@@ -86,9 +100,9 @@
                             <div class="icon">
                                 <i class="flaticon-023-flask"></i>
                             </div>
-                            <h2>Formação</h2>
+                            <h2>{{ trans('conteudo.formacao') }}</h2>
                             <p>
-                                Bacharel em Ciência da Computação
+                                {{ trans('conteudo.desc_formacao') }}
                                 <br />
                                 (IUESO - Instituto Unificado de Ensino Superior Objetivo, Goiânia-GO/2003).
                             </p>
@@ -100,9 +114,9 @@
                             <div class="icon">
                                 <i class="flaticon-011-compass"></i>
                             </div>
-                            <h2>Experiência</h2>
+                            <h2>{{ trans('conteudo.experiencia') }}</h2>
                             <p>
-                                No mercado de Tecnologia da Informação há 17 anos, atua há 13 como Analista de Sistemas na
+                                {{ trans('conteudo.desc_experiencia') }}
                                 <a href="http://www.unirg.edu.br" target="_blank">Universidade de Gurupi</a>.
                             </p>
                         </div>
@@ -113,11 +127,9 @@
                             <div class="icon">
                                 <i class="flaticon-037-idea"></i>
                             </div>
-                            <h2>Serviços</h2>
+                            <h2>{{ trans('conteudo.servicos') }}</h2>
                             <p>
-                                Modelagem, desenvolvimento e hospedagem de websites e sistemas online.
-                                <br />
-                                Consultoria em projetos na internet.
+                                {!! trans('conteudo.desc_servicos') !!}
                             </p>
                         </div>
                     </div>
@@ -134,7 +146,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="section-title">
-                <h2>Portfólio <span>em</span> destaque</h2>
+                <h2>{!! trans('conteudo.portfolio_title') !!}</h2>
             </div>
             <div class="row">
                 <div class="col-sm-4">
@@ -179,7 +191,7 @@
                     <div class="member">
                         <a href="http://www.sobgestao.com.br" target="_blank"><img src="{{ asset('img/team/6.jpg') }}" alt="SOBGestão"></a>
                         <h2>SOBGestão</h2>
-                        <h3>Sistema na nuvem</h3>
+                        <h3>{{ trans('conteudo.sistema_nuvem') }}</h3>
                     </div>
                 </div>
             </div>
@@ -196,7 +208,7 @@
                 <!-- contact info -->
                 <div class="col-md-5 col-md-offset-1 contact-info col-push">
                     <div class="section-title left">
-                        <h2>Entre em contato</h2>
+                        <h2>{{ trans('conteudo.contato_title') }}</h2>
                     </div>
                     <p></p>
                     <h3 class="mt60"></h3>
@@ -211,16 +223,16 @@
                     {!! Form::open(['route' => 'enviar', 'class' => 'form-class', 'method' => 'post']) !!}
                         <div class="row">
                             <div class="col-sm-6">
-                                {!! Form::text('nome', null, ['placeholder' => 'Seu nome']) !!}
+                                {!! Form::text('nome', null, ['placeholder' => trans('conteudo.contato_nome')]) !!}
                             </div>
                             <div class="col-sm-6">
-                                {!! Form::email('email', null, ['placeholder' => 'Seu e-mail']) !!}
+                                {!! Form::email('email', null, ['placeholder' => trans('conteudo.contato_email')]) !!}
                             </div>
                             <div class="col-sm-12">
-                                {!! Form::text('assunto', null, ['placeholder' => 'Assunto']) !!}
-                                {!! Form::textarea('mensagem', null, ['placeholder' => 'Mensagem']) !!}
+                                {!! Form::text('assunto', null, ['placeholder' => trans('conteudo.contato_assunto')]) !!}
+                                {!! Form::textarea('mensagem', null, ['placeholder' => trans('conteudo.contato_mensagem')]) !!}
 
-                                <button type="submit" class="site-btn">Enviar</button>
+                                <button type="submit" class="site-btn">{{ trans('conteudo.contato_enviar') }}</button>
                             </div>
                         </div>
                     {!! Form::close() !!}
@@ -233,7 +245,7 @@
 
     <!-- Footer section -->
     <footer class="footer-section">
-        <h2>&copy; 2005-{{ date('Y') }} Todos os direitos reservados.</h2>
+        <h2>&copy; 2005-{{ date('Y') }} {{ trans('conteudo.copyright') }}.</h2>
     </footer>
     <!-- Footer section end -->
 

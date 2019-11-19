@@ -272,6 +272,18 @@ ul {
 	transition: all 0.4s ease 0s;
 }
 
+.header-section .header-language {
+	display: none;
+	text-align: right;
+	height: 24px;
+}
+
+.header-section .header-language img {
+	margin-left: 3px;
+	height: 24px;
+	width: 24px;
+}
+
 .header-section .logo {
 	display: inline-block;
 	float: left;
@@ -335,6 +347,20 @@ ul {
 .hero-section {
 	height: 100%;
 	position: relative;
+}
+
+.hero-section .hero-language {
+	position: absolute;
+	width: 100%;
+	padding: 5px 10px;
+	text-align: right;
+	height: 24px;
+}
+
+.hero-section .hero-language img {
+	margin-left: 4px;
+	height: 24px;
+	width: 24px;
 }
 
 .hero-content {
@@ -1613,6 +1639,10 @@ ul {
 		width: 100%;
 		text-align: center;
 	}
+
+	.header-section .header-language {
+		display: block;
+	}
 }
 
 
@@ -1715,6 +1745,10 @@ ul {
 	}
 	.hero-content img {
 		max-width: 280px;
+	}
+	.hero-language {
+		max-width: 280px;
+		clear: both;
 	}
 	.test-overlay {
 		display: none;

@@ -6,6 +6,24 @@ use App\Helpers\Registry;
 use GuzzleHttp\Client;
 use Carbon\Carbon;
 
+function parseLocale()
+{
+    // Busca a primeira rota da URL
+    $locale     = Request::segment(1); // Define os locales da aplicação
+    $languages  = ['pt-BR', 'en', 'es'];
+
+    // Verifica se o locale passado na URL é válido
+    // Se sim, então muda o idioma da aplicação e retorna o locale
+    // Se não, então deixa o idioma padrão
+    if (in_array($locale, $languages)) {
+        App::setLocale($locale);
+
+        return $locale;
+    }
+
+    return '/';
+}
+
 function apiRequest($method, $url, array $options = [])
 {
     $user   = auth()->user();

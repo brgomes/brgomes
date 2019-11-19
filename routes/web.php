@@ -1,6 +1,6 @@
 <?php
 
-Route::group([], function() {
+Route::group(['prefix' => parseLocale()], function() {
 	Route::get('/', 'HomeController@index')->name('home');
 	Route::post('/enviar', 'HomeController@enviarEmail')->name('enviar');
 });
