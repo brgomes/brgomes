@@ -20,13 +20,13 @@ class AppServiceProvider extends ServiceProvider
 
             $event->menu->add(
                 [
-                    'text'      => 'Início',
+                    'text'      => 'INÍCIO',
                     'icon'      => 'fa fa-home',
                     'route'     => 'sistema.index',
                     'active'    => ['/sistema'],
                 ],
                 [
-                    'text'          => 'Importação',
+                    'text'          => 'IMPORTAÇÃO',
                     'route'         => 'importacao.index',
                     'icon'          => 'fa fa-database',
                     //'label'         => ($qtdeTarefas > 0) ? $qtdeTarefas : null,
@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
                     'active'        => ['/sistema/importacao*'],
                 ],
                 [
-                    'text'          => 'Livros',
+                    'text'          => 'LIVROS',
                     'route'         => 'sistema.livros.index',
                     'icon'          => 'fa fa-book',
                     //'label'         => ($qtdeTarefas > 0) ? $qtdeTarefas : null,
@@ -42,7 +42,7 @@ class AppServiceProvider extends ServiceProvider
                     'active'        => ['/sistema/livros*'],
                 ],
                 [
-                    'text'          => 'Strava',
+                    'text'          => 'STRAVA',
                     'route'         => 'sistema.strava.index',
                     'icon'          => 'fab fa-strava',
                     //'label'         => ($qtdeTarefas > 0) ? $qtdeTarefas : null,
@@ -50,24 +50,36 @@ class AppServiceProvider extends ServiceProvider
                     'active'        => ['/sistema/strava'],
                 ],
                 [
-                    'text'      => 'Futebol',
+                    'text'      => 'FUTINFO',
                     'icon'      => 'fas fa-futbol',
                     'submenu'   => [
+                        [
+                            'text'  => 'Início',
+                        ],
                         [
                             'text'      => 'Cadastros',
                             'submenu'   => [
                                 [
-                                    'text'  => 'Campeonatos',
-                                ],
-                                [
                                     'text'  => 'Clubes',
                                 ],
+                                [
+                                    'text'  => 'Estádios',
+                                ],
+                                /*[
+                                    'text'  => 'Árbitros',
+                                ],*/
+                                [
+                                    'text'  => 'Campeonatos',
+                                ],
                             ],
+                        ],
+                        [
+                            'text'  => 'Resultados',
                         ],
                     ],
                 ],
                 [
-                    'text'      => 'Investimentos',
+                    'text'      => 'INVESTIMENTOS',
                     'icon'      => 'fas fa-chart-line',
                     'submenu'   => [
                         [

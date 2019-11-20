@@ -1,15 +1,32 @@
-- Colocar logomarca como favicon
-
-- Criar link para área restrita no rodapé
-
-- Adicionar os banners do Adsense
-
-
-
-
-
 + MOVER OS SISTEMAS PARA O NOVO SITE, TODOS PROTEGIDOS POR USUÁRIO E SENHA NA ÁREA RESTRITA
 
-- Investimentos (Reformular parte da renda variável)
-- Strava
-- Livros
+- FUTINFO
+
+- Cadastro de clubes
+- Cadastro de estádios
+- Cadastro de campeonatos
+- Cadastro de edições de campeonato
+- Cadastro de clubes em edições de campeonato
+- Cadastro de fases de edição de campeonato
+- Cadastro de grupos em fases de edição de campeonato
+- Cadastro de clubes em grupos de fase de edição de campeonato
+- Cadastro de partidas
+- Tela para inserção de resultados
+- Cadastro de árbitros *
+
+
+- INVESTIMENTOS (Reformular parte da renda variável)
+
+- Cadastro de pessoas investidoras
+- Cadastro de categorias de investimentos
+- Cadastro de ativos
+- Cadastro de movimentos de ativos, que deve alimentar a tabela investCarteira
+- Exibição de carteiras
+- Cadastro de índices
+- Cadastro de fundamentos
+- Cadastro de listagens *
+- Cadastro de setor *
+
+
+
+* Pode ser procrastinado
