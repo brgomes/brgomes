@@ -212,9 +212,9 @@
                     </div>
                     <p></p>
                     <h3 class="mt60"></h3>
-                    <p class="con-item"></p>
-                    <p class="con-item"></p>
-                    <p class="con-item"></p>
+                    <p class="con-item"><a href="https://www.linkedin.com/in/brgomes1" target="_blank">Linkedin</a></p>
+                    <p class="con-item"><a href="https://www.twitter.com/brgomes" target="_blank">Twitter</a></p>
+                    <p class="con-item"><a href="https://www.skoob.com.br/usuario/127841-bruno-roberto" target="_blank">Skoob</a></p>
                 </div>
                 <!-- contact form -->
                 <div class="col-md-6 col-pull">
