@@ -10,7 +10,7 @@ help-default help:
 	@echo ""
 
 dump:
-	mysqldump -h 45.79.92.163 -u root -pRoot-1982 -B brgomes2 --skip-lock-tables | pv -s 1M > database.sql
+	mysqldump -h 45.79.92.163 -u root -pRoot-1982 -B brgomes2 --skip-lock-tables | pv -s 2M > database.sql
 	make restore
 
 restore:
