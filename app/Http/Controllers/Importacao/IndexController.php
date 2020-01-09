@@ -47,6 +47,10 @@ class IndexController extends Controller
 
     		foreach ($strava2 as $strava) {
     			$result = apiRequest('POST', 'strava', ['form_params' => $strava->toArray()]);
+
+                if ($result['statusCode'] != '200') {
+                    dd($result);
+                }
     		}
     	}
 
