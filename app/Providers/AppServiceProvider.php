@@ -91,6 +91,18 @@ class AppServiceProvider extends ServiceProvider
                                 [
                                     'text'  => 'Setores',
                                 ],
+                                [
+                                    'text'  => 'Categorias',
+                                ],
+                                [
+                                    'text'  => 'Índices',
+                                ],
+                                [
+                                    'text'  => 'Investidores',
+                                ],
+                                [
+                                    'text'  => 'Fundamentos',
+                                ],
                             ],
                         ],
                     ],
