@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Investimento;
 
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 
-class Invest_movimento extends Model
+class Invest_pessoa extends Model
 {
 	use \OwenIt\Auditing\Auditable;
 
-    protected $fillable = ['conta', 'mes', 'ano', 'aporte', 'saldo'];
+    protected $fillable = ['nome', 'patrimonio'];
+    protected $table 	= 'investPessoa';
 
     public $timestamps = false;
 }

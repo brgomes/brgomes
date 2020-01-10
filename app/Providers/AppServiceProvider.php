@@ -98,6 +98,9 @@ class AppServiceProvider extends ServiceProvider
                                     'text'  => 'Índices',
                                 ],
                                 [
+                                    'text'  => 'Contas',
+                                ],
+                                [
                                     'text'  => 'Investidores',
                                 ],
                                 [
