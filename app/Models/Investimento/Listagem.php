@@ -5,12 +5,12 @@ namespace App\Models\Investimento;
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 
-class Invest_setor extends Model
+class Listagem extends Model
 {
     use \OwenIt\Auditing\Auditable;
 
-    protected $fillable = ['nome'];
-    protected $table 	= 'investSetor';
+    protected $fillable = ['nome', 'descricao'];
+    protected $table 	= 'investListagem';
 
     public $timestamps = false;
 }
