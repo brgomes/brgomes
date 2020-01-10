@@ -28,4 +28,6 @@ Route::group(['middleware' => 'auth:api'], function() {
 	Route::post('strava', 'API\StravaController@store')->name('sistema.strava.store');
 
 	Route::post('details', 'API\UsuarioController@details');
+
+	Route::resource('indices', 'API\Investimento\IndiceController');
 });

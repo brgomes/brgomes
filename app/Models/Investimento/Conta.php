@@ -5,7 +5,7 @@ namespace App\Models\Investimento;
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 
-class Conta extends Model
+class Conta extends Model implements Auditable
 {
 	use \OwenIt\Auditing\Auditable;
 

@@ -5,7 +5,7 @@ namespace App\Models\Investimento;
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 
-class Subcategoria extends Model
+class Subcategoria extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
 

@@ -61,6 +61,16 @@ class IndexController extends Controller
                     dd($result);
                 }
     		}
+        } elseif ($chave == 'indices') {
+            $indice2 = Indice2::all();
+
+            foreach ($indice2 as $indice) {
+                $result = apiRequest('POST', 'indices', ['form_params' => $indice->toArray()]);
+
+                if ($result->statusCode != '200') {
+                    dd($result);
+                }
+            }
     	}
 
     	return redirect()->route('importacao.index');
