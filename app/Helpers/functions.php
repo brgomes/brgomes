@@ -34,13 +34,16 @@ function apiRequest($method, $url, array $options = [])
     //$client = new Client();
 
     if ($user) {
-        echo($user->access_token); die();
+        //echo($user->access_token); die();
+
+        $bearer = $user->access_token;
+        //$bearer = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjE0OGExZTY4OGE1OWVjZDRlM2ZjYThiMGM2YjdjMzY1NmJmYzQ3YjNiMjRhNzM3NzJhMTVlYmVhMjQ1MmVlZTcyNTVkMDMwNjk0NWQwZDg2In0.eyJhdWQiOiIxIiwianRpIjoiMTQ4YTFlNjg4YTU5ZWNkNGUzZmNhOGIwYzZiN2MzNjU2YmZjNDdiM2IyNGE3Mzc3MmExNWViZWEyNDUyZWVlNzI1NWQwMzA2OTQ1ZDBkODYiLCJpYXQiOjE1ODc1ODM1NjgsIm5iZiI6MTU4NzU4MzU2OCwiZXhwIjoxNTg4MTg4MzY4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Te823A1-N7UvEwHcRnFalgPtk0-UqhP-uGMo75o_Bko2n0hA6aVY82qpJgTgjWOhGu2fOTVnK2OCz7a1fVPED3cvIC6mDnwLNWR8bb_m8x6Qp_-kw9x-PAlrgGcGkSNAjd9frw2AGOeZbj209sD0XZ3TDHlmypEedDOCJbmyL62yZoV1hx4VIqoHbPVjHkHbvjypc24OJTJgWNPGDKTgcS93elDfTewZJF8HR-oQEo76J5gStj8zrTTBVo0meSk91TDR0GmeGL0_mvRRXGPxo3wfSz80HHhKOnpB4kfnncJI5geRnabG6pTKCYH4op2kNQ-aMcuUTNrvrcx_RNXGVwUblfuvHNAAjfXSg_cpFXaRJ8TY92q9bkorVZ_2PsqYU096YMV1pe13J7APcFQSttuDjBY09vLD55xHfY2JLvqgif-STeKR9u5VVzHGgoK8nJ8B9lBo-78RpaqioS1VxcdwGJRlS1CZykrF1YnZEX0n5KPkRTno7jq9JCVYJC0slOIIpCFFg29-upndNC6zO9Ek8d0pM8Ano_HlAQXElUdMbZQKybUWBr1Yxzj69we6lm53yLOTV2dRE-fQ9QYvCZtDWZzCkbX1n0ybZuVfyzXHA9UYJJRNzgfuTbPLphCj529vC7DeklfYuqtrBkKziwrmY1PhkonxxINx3uhcUwY';
 
         $options2 = [
             'verify'        => false,
             'exceptions'    => false,
             'headers'       => [
-                'Authorization' => 'Bearer ' . $user->access_token,
+                'Authorization' => 'Bearer ' . $bearer,
                 'Content-Type'  => 'application/x-www-form-urlencoded',
                 'Accept'        => 'application/json',
             ],

@@ -33,11 +33,12 @@ class LoginController extends Controller
                     return redirect()->back()->withErrors(['email' => 'Usuário e/ou senha inválidos.']);
                 }
 
-                /*$user = Usuario::find(1);
-                $user->access_token = $response->token;
-                $user->save();*/
+                $user = Usuario::find($response->user->id);
 
-                Auth::login($request->user);
+                Auth::login($user);
+
+                $user->access_token = $response->token;
+                $user->save();
             }
         }
 
