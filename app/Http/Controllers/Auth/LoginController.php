@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Sistema\Usuario;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -18,6 +19,29 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function login(Request $request)
+    {
+        $user = Auth::user();
+
+        if (!$user) {
+            $credentials = $request->only(['email', 'password']);
+
+            if ($response = apiRequest('POST', 'login', ['form_params' => $credentials])) {
+                if ($response->status === 'error') {
+                    return redirect()->back()->withErrors(['email' => 'Usuário e/ou senha inválidos.']);
+                }
+
+                /*$user = Usuario::find(1);
+                $user->access_token = $response->token;
+                $user->save();*/
+
+                Auth::login($request->user);
+            }
+        }
+
+        return redirect()->route('home');
     }
 
     public function logout(Request $request)

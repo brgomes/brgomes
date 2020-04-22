@@ -10,11 +10,11 @@ help-default help:
 	@echo ""
 
 dump:
-	mysqldump -h 45.79.92.163 -u root -pRoot-1982 -B brgomes2 --skip-lock-tables | pv -s 2M > database.sql
+	mysqldump -h 45.79.92.163 -u root -pRoot-1982 -B --add-drop-database brgomes2 --skip-lock-tables | pv -s 2M > database.sql
 	make restore
 
 restore:
-	pv database.sql | mysql -uroot -proot
+	cat database.sql | pv | docker exec -i mysql-server /usr/bin/mysql -u root --password=root --init-command="SET autocommit=0;"
 
 push:
 	git push origin $(shell git rev-parse --abbrev-ref HEAD)

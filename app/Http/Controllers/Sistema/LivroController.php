@@ -16,7 +16,7 @@ class LivroController extends Controller
 			return view('sistema.livros.index', compact('result'));
 		}
 
-		error($result->error);
+		error($result->message);
     }
 
     public function store(Request $request)

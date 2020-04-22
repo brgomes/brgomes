@@ -20,3 +20,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'sistema'], function() {
 });
 
 Auth::routes();
+
+Route::get('/home', function() {
+    return view('home');
+})->name('home')->middleware('auth');

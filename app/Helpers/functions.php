@@ -4,6 +4,7 @@ use App\Helpers\Registry;
 //use Illuminate\Support\Facades\Storage;
 //use Intervention\Image\Facades\Image;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use Carbon\Carbon;
 
 function parseLocale()
@@ -27,20 +28,36 @@ function parseLocale()
 function apiRequest($method, $url, array $options = [])
 {
     $user   = auth()->user();
-    $client = new Client();
+    $client = new Client([
+        'base_uri'  => env('API_URL'),
+    ]);
+    //$client = new Client();
 
-    $options2 = [
-        'verify'        => false,
-        'exceptions'    => false,
-        'headers'       => [
-            'Authorization' => 'Bearer ' . $user->access_token,
-            'Content-Type'  => 'application/x-www-form-urlencoded',
-            'Accept'        => 'application/json',
-        ],
-    ];
+    if ($user) {
+        echo($user->access_token); die();
 
-    $options    = array_merge($options2, $options);
-    $response   = $client->request($method, env('API_URL') . $url, $options);
+        $options2 = [
+            'verify'        => false,
+            'exceptions'    => false,
+            'headers'       => [
+                'Authorization' => 'Bearer ' . $user->access_token,
+                'Content-Type'  => 'application/x-www-form-urlencoded',
+                'Accept'        => 'application/json',
+            ],
+        ];
+    } else {
+        $options2 = ['verify' => false, 'exceptions' => false];
+    }
+
+    $options = array_merge($options2, $options);
+
+    //try {
+        //$response = $client->request($method, env('API_URL') . $url, $options);
+    $response = $client->request($method, $url, $options);
+    //} catch (GuzzleException $e) {
+        //dd($e->getMessage());
+    //}
+
     $contents   = json_decode($response->getBody()->getContents());
     $array      = array_merge(['statusCode' => $response->getStatusCode()], json_decode(json_encode($contents), true));
 
