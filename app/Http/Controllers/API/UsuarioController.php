@@ -19,17 +19,17 @@ class UsuarioController extends Controller
             return response()->json(['status' => 'success', 'token' => $token, 'user' => $user->toArray()], $this->successStatus);
         }
 
-        return response()->json(['status' => 'error', 'message' => 'Unauthorised'], 401);
+        return response()->json(['status' => 'error', 'message' => 'Combinação usuário e senha inválida.'], 401);
     }
 
     public function logout(Request $request)
     {
     	$request->user()->token()->revoke();
 
-        return response()->json(['status' => 'success','message' => 'Successfully logged out']);
+        return response()->json(['status' => 'success', 'message' => 'Sessão encerrada com sucesso.']);
     }
 
-    public function details()
+    public function me()
     {
         $user = Auth::user();
 
