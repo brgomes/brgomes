@@ -5,7 +5,7 @@ namespace App\Models\Investimento;
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Contracts\Auditable;
 
-class Crteira extends Model implements Auditable
+class Carteira extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
 
