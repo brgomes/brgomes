@@ -212,9 +212,10 @@
                     </div>
                     <p></p>
                     <h3 class="mt60"></h3>
-                    <p class="con-item"><a href="https://www.linkedin.com/in/brgomes1" target="_blank">Linkedin</a></p>
-                    <p class="con-item"><a href="https://www.twitter.com/brgomes" target="_blank">Twitter</a></p>
-                    <p class="con-item"><a href="https://www.skoob.com.br/usuario/127841-bruno-roberto" target="_blank">Skoob</a></p>
+                    <p class="con-item"><a href="https://www.linkedin.com/in/brgomes1" target="_blank"><img src="{{ asset('img/social/linkedin.png') }}" alt="LinkedIn" title="LinkedIn"></a></p>
+                    <p class="con-item"><a href="https://www.twitter.com/brgomes" target="_blank"><img src="{{ asset('img/social/twitter.png') }}" alt="Twitter" title="Twitter"></a></p>
+                    <p class="con-item"><a href="https://api.whatsapp.com/send?phone=5563984015090&text=Ol%C3%A1%2C%20Bruno!%20Tudo%20bem%3F%20Encontrei%20seu%20n%C3%BAmero%20pelo%20seu%20site." target="_blank"><img src="{{ asset('img/social/whatsapp.png') }}" alt="WhatsApp" title="WhatsApp"></a></p>
+                    <p class="con-item"><a href="https://www.github.com/brgomes" target="_blank"><img src="{{ asset('img/social/github.png') }}" alt="GitHub" title="GitHub"></a></p>
                 </div>
                 <!-- contact form -->
                 <div class="col-md-6 col-pull">

@@ -5,7 +5,7 @@ return [
 	'formacao'			=> 'Formação',
 	'desc_formacao'		=> 'Bacharel em Ciência da Computação',
 	'experiencia'		=> 'Experiência',
-	'desc_experiencia'	=> 'No mercado de Tecnologia da Informação há 17 anos, atua há 13 como Analista de Sistemas na',
+	'desc_experiencia'	=> 'No mercado de Tecnologia da Informação há 18 anos, atua há 14 como Analista de Sistemas na',
 	'servicos'			=> 'Serviços',
 	'desc_servicos' 	=> 'Modelagem, desenvolvimento e hospedagem de websites e sistemas online.<br />Consultoria em projetos na internet.',
 	'portfolio_title'	=> 'Portfólio <span>em</span> destaque',
