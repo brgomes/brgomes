@@ -10,4 +10,5 @@
 
 <br /><br />
 ====================
-<small>Enviado através do site brgomes.com</small>
+<br />
+<small>Enviado através do site brgomes.com. IP: {{ $ip }}<small>
