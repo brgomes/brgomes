@@ -19,9 +19,9 @@ class ReCaptchaV3 implements Rule
         $recaptcha          = json_decode($recaptcha_response);
 
         if ($recaptcha->success) {
-            //if ($recaptcha->score >= 0.5) {
+            if ($recaptcha->score >= 0.5) {
                 return true;
-            //}
+            }
         }
 
         return false;
