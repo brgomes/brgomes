@@ -274,6 +274,6 @@
         })();
     </script>
 
-    @include('includes._recaptcha', ['action' => 'brgomes:contato'])
+    @include('includes._recaptcha', ['action' => 'brgomes_contato'])
 </body>
 </html>
