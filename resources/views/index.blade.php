@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }} "/>
     <link rel="stylesheet" href="{{ mix('css/font-awesome.css') }} "/>
     <link rel="stylesheet" href="{{ asset('css/flaticon.css') }} "/>
-    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }} "/>
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }} "/>
     <link rel="stylesheet" href="{{ asset('css/style.css') }} "/>
 
@@ -79,9 +78,10 @@
             </div>
         </div>
         <!-- slider -->
+        <!--<div id="hero-slider" class="owl-carousel">-->
         <div id="hero-slider" class="owl-carousel">
             <div class="item hero-item" data-bg="{{ asset('img/01.webp') }}"></div>
-            <div class="item hero-item" data-bg="{{ asset('img/02.webp') }}"></div>
+            <!--<div class="item hero-item" data-bg="{{ asset('img/02.webp') }}"></div>-->
         </div>
     </div>
     <!-- Intro Section -->

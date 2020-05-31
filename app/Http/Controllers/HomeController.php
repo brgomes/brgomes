@@ -16,6 +16,8 @@ class HomeController extends Controller
 
     public function index()
     {
+        header("Cache-Control: max-age=31536000");
+
         return view('index');
     }
 
