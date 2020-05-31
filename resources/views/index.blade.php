@@ -10,7 +10,7 @@
     <link href="{{ asset('img/favicon.ico') }}" rel="shortcut icon"/>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Roboto:300,400,700&display=swap" rel="preload">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }} "/>
