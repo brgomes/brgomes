@@ -31,7 +31,7 @@
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader">
-            <img src="img/logo.png" alt="">
+            <img src="img/logo.webp" alt="">
             <h2>{{ trans('conteudo.carregando') }}...</h2>
         </div>
     </div>
@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="logo">
-            <img src="{{ asset('img/logo.png') }}" alt="">
+            <img src="{{ asset('img/logo.webp') }}" alt="">
         </div>
         <!--<div class="responsive"><i class="fa fa-bars"></i></div>
         <nav>
@@ -74,7 +74,7 @@
                 </div>
             </div>
             <div class="hero-center">
-                <img src="{{ asset('img/big-logo.png') }}" alt="">
+                <img src="{{ asset('img/big-logo.webp') }}" alt="">
                 <p></p>
             </div>
         </div>
