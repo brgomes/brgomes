@@ -34,12 +34,13 @@ class HomeController extends Controller
                 $message->to('bruno@brgomes.com', 'Bruno R. Gomes');
             });
         } catch (\Exception $e) {
-            dd($e->getMessage());
+            //dd($e->getMessage());
             return redirect()->to(URL::previous() . '#contato')
                 ->with('error', 'No momento o contato não pôde ser enviado. Por favor, tente novamente mais tarde.')
                 ->withInput();
         }
 
-        return redirect()->to(URL::previous() . '#contato')->with('success', 'Obrigado! Seu contato foi enviado com sucesso.');
+        return redirect()->to(URL::previous() . '#contato')
+            ->with('success', 'Obrigado! Seu contato foi enviado com sucesso.');
     }
 }
