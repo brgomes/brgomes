@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\URL;
 use App\Rules\ReCaptchaV3;
+use Illuminate\Support\Facades\Lang;
 
 class ContatoValidationRequest extends FormRequest
 {
@@ -24,13 +25,13 @@ class ContatoValidationRequest extends FormRequest
             'email'     => 'required|email',
             'assunto'   => 'required',
             'mensagem'  => 'required',
-            'recaptcha' => new ReCaptchaV3(),
+            'recaptcha' => ['required', new ReCaptchaV3()],
         ];
     }
 
     public function messages()
     {
-        if (\Lang::locale() == 'en') {
+        if (Lang::locale() == 'en') {
             return [
                 'nome.required'     => 'The name field is required.',
                 'email.required'    => 'The e-mail field is required.',
@@ -38,7 +39,7 @@ class ContatoValidationRequest extends FormRequest
                 'assunto.required'  => 'The subject field is required.',
                 'mensagem.required' => 'The message field is required.',
             ];
-        } elseif (\Lang::locale() == 'es') {
+        } elseif (Lang::locale() == 'es') {
             return [
                 'nome.required'     => 'El campo nombre es obligatorio.',
                 'email.required'    => 'El campo correo electrónico es obligatorio.',

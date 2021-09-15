@@ -26,7 +26,7 @@ class HomeController extends Controller
 
             $data['ip'] = $_SERVER['REMOTE_ADDR'];
 
-            Mail::send('emails.contato', $data, function($message) use ($data) {
+            Mail::send('emails.contato', $data, function ($message) use ($data) {
                 //$message->from($data['email'], $data['nome']);
                 $message->from(env('MAIL_USERNAME'));
                 $message->replyTo($data['email'], $data['nome']);

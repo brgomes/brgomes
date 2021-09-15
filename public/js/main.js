@@ -262,8 +262,8 @@ function progressCircle() {
 	heroSection();
 	testimonial();
 	progressbar();
-	videoPopup();
+	//videoPopup();
 	accordions();
-	progressCircle();
+	//progressCircle();
 
 })(jQuery);

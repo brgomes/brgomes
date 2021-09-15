@@ -15,11 +15,12 @@ class ReCaptchaV3 implements Rule
     {
         $recaptcha_url      = 'https://www.google.com/recaptcha/api/siteverify';
         $recaptcha_secret   = env('RECAPTCHA_SECRET');
-        $recaptcha_response = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $value);
+        $url                = $recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $value;
+        $recaptcha_response = file_get_contents($url);
         $recaptcha          = json_decode($recaptcha_response);
 
         if ($recaptcha->success) {
-            if ($recaptcha->score >= 0.5) {
+            if ($recaptcha->score >= 0.6) {
                 return true;
             }
         }

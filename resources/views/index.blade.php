@@ -6,6 +6,7 @@
     <meta name="description" content="Labs - Design Studio">
     <meta name="keywords" content="lab, onepage, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="grecaptcha-key" content="{{ env('RECAPTCHA_KEY') }}">
     <!-- Favicon -->
     <link href="{{ asset('img/favicon.ico') }}" rel="shortcut icon"/>
 
@@ -221,22 +222,23 @@
                 <div class="col-md-6 col-pull">
                     @include('includes._alerts')
 
-                    {!! Form::open(['route' => 'enviar', 'class' => 'form-class', 'method' => 'post']) !!}
+                    {{ Form::open(['route' => 'enviar', 'class' => 'form-class', 'method' => 'post']) }}
                         <div class="row">
                             <div class="col-sm-6">
-                                {!! Form::text('nome', null, ['placeholder' => trans('conteudo.contato_nome')]) !!}
+                                {{ Form::text('nome', null, ['placeholder' => trans('conteudo.contato_nome')]) }}
                             </div>
                             <div class="col-sm-6">
-                                {!! Form::email('email', null, ['placeholder' => trans('conteudo.contato_email')]) !!}
+                                {{ Form::email('email', null, ['placeholder' => trans('conteudo.contato_email')]) }}
                             </div>
                             <div class="col-sm-12">
-                                {!! Form::text('assunto', null, ['placeholder' => trans('conteudo.contato_assunto')]) !!}
-                                {!! Form::textarea('mensagem', null, ['placeholder' => trans('conteudo.contato_mensagem')]) !!}
+                                {{ Form::text('assunto', null, ['placeholder' => trans('conteudo.contato_assunto')]) }}
+                                {{ Form::textarea('mensagem', null, ['placeholder' => trans('conteudo.contato_mensagem')]) }}
+                                {{ Form::hidden('recaptcha', null, ['id' => 'recaptcha']) }}
 
                                 <button type="submit" class="site-btn">{{ trans('conteudo.contato_enviar') }}</button>
                             </div>
                         </div>
-                    {!! Form::close() !!}
+                    {{ Form::close() }}
                 </div>
             </div>
         </div>
@@ -258,7 +260,6 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
-
 
     <script type="text/javascript">
         var _gaq = _gaq || [];
